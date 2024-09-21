@@ -12,7 +12,7 @@ Siga os passos abaixo para configurar seu ambiente:
 
 
 
-## Development server
+## Ambiente de desenvolvimento
 Para verificar a versão do Node.js instalada localmente em sua máquina, você pode executar o seguinte comando no terminal:
 
 Pra esse projeto e setup usei  essas versoes, recomendo usar o nvm pra facilitar a troca
@@ -59,7 +59,63 @@ você pode configurar os schematics no arquivo angular.json.
 Isso não apenas otimiza a detecção de alterações, mas também 
 estabelece uma prática consistente entre os desenvolvedores do projeto.
 
+![img.png](docs/imgs/schematics.png)
+
+### Prettier
+
+O Prettier é um formatador de código opinativo que garante uniformidade na
+apresentação do código em todo o seu projeto. Isso elimina a necessidade de 
+discussões sobre estilo de código entre os desenvolvedores e 
+permite que a equipe concentre seus esforços na lógica do código.
+Usar o Prettier ajuda a manter a base de código limpa e consistente, 
+facilitando a leitura e manutenção por qualquer pessoa do time.
 
 
+```bash
+pnpm  install -D prettier
+```
+crie dois arquivos um .prettierrc e um .prettierignore
+e coloque essa config pro prettier
+```json
 
 
+{
+  "singleQuote": true,
+  "tabWidth": 2,
+  "printWidth": 120
+}
+```
+pro ignore
+```json 
+# Add files here to ignore them from prettier formatting
+dist
+coverage
+.angular
+package-lock.json
+docs
+package-lock.yaml
+
+```
+
+
+depois de instalar, configure no seu webstorm ou vs code
+
+![img.png](docs/imgs/wbe.png)
+Com o Prettier configurado no seu IDE de escolha, 
+é uma boa prática adicionar scripts de formatação no
+package.json do seu projeto. 
+Isso permite formatar o código facilmente ou verificar se tudo 
+está formatado corretamente em todo o workspace. 
+Aqui está como você pode fazer isso:
+
+```json
+"scripts": {
+  "format:test": "prettier --list-different \"./projects/**/*.{ts,html,scss,json}\"",
+  "format:write": "prettier --write \"./projects/**/*.{ts,html,scss,json}\""
+}
+```
+
+#### Explicação dos Scripts
+format:test: Este script usa o comando --list-different do Prettier para listar os arquivos que não estão formatados corretamente de acordo com as regras definidas. Se houver arquivos que precisam de formatação, eles serão exibidos no terminal.
+
+format:write: Este script usa o comando --write para automaticamente formatar todos os arquivos especificados no padrão do caminho.
