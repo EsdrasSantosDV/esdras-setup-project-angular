@@ -119,3 +119,21 @@ Aqui está como você pode fazer isso:
 format:test: Este script usa o comando --list-different do Prettier para listar os arquivos que não estão formatados corretamente de acordo com as regras definidas. Se houver arquivos que precisam de formatação, eles serão exibidos no terminal.
 
 format:write: Este script usa o comando --write para automaticamente formatar todos os arquivos especificados no padrão do caminho.
+
+
+#### Integração com Sistema de Controle de Versão
+
+Para uma integração ainda mais eficiente, utilizei o husky
+Isso permite que a formatação seja automaticamente
+aplicada a arquivos modificados no momento do commit, 
+garantindo que todo código comitado siga as convenções de estilo.
+
+```bash 
+pnpm add --save-dev husky
+pnpm add --save-dev husky
+```
+ai se cria um pasta chamada pre-commit, onde coloquei o comando de formatar
+aqui da pra usar muito mais comandos
+```json
+npm run format:write
+```
