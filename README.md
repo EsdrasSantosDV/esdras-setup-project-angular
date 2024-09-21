@@ -137,3 +137,67 @@ aqui da pra usar muito mais comandos
 ```json
 npm run format:write
 ```
+
+### Tamanho de pacote e build
+Uma coisa que nunca parava pra pensar, em questão de frontend, era o tamanho do pacote,
+sempre pensava em questão colocar lazy loading nos modulos, mas nunca olhava ferramentas que poderia me ajudar
+em questão de analise do tamanho dos pacotes de uma aplicação no frontend, em pesquisas descobri 3 ferramentas
+que que podem ser usadas para analisar o tamanho do pacote:
+
+1. esbuild-visualizer: Bom para quem usa esbuild. Ele cria uns arquivos que precisam de um servidor tipo HTTP para você ver o que está acontecendo. Dá para ver tudo em formatos diferentes, como treemap, que é o mais comum.
+2. source-map-explorer
+   Adequado para: Qualquer projeto que produza mapas de fonte, mas é mais simples e não tão bonito quanto outros. 
+3. webpack-bundle-analyzer :É a mais usada, mas só vale para quem não tá no esbuild. Se seu projeto é antigo e usa webpack, essa é a ferramenta.
+
+Essas ferramentas ajudam a manter a eficiência de sua aplicação ao permitir uma gestão cuidadosa do tamanho do pacote, essencial para otimizar os tempos de carga e melhorar a experiência geral de desenvolvimento.
+
+
+vamos usar o esbuild e o source-map-explorer
+
+```bash
+pnpm install -D esbuild-visualizer source-map-explorer http-server
+```
+
+```bash
+"analyze": "ng build --stats-json --output-hashing=none --named-chunks && esbuild-visualizer --template treemap --metadata dist/frontend-school/stats.json --filename dist/frontend-school/analyse/index.html  && http-server -o -c-1 ./dist/frontend-school/analyse/",
+"analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/frontend-school/browser/*.js --html dist/frontend-school/sme/index.html && http-server -o -c-1 ./dist/frontend-school/sme/",
+
+```
+
+Como podem ver, utilizamos um http server pra visualizar o tamanho dos arquivos incluidos no pacote e identificar quais modulos que são mais pesados.
+![img.png](docs/imgs/analyzer2.png)
+![img.png](docs/imgs/lint.png)
+
+conseguimos ver o source mapper, com o tamanho do bundle da aplicação
+![img.png](docs/imgs/source-mapper.png)
+![img.png](docs/imgs/esbuild-visualizer.png)
+
+Ele é mais limitado em termos de visualizações interativas e recursos adicionais,
+focando-se principalmente na exibição dos componentes do pacote com base nos mapas de fonte existentes.
+
+enquanto o esbuild, gera um arquivo que pode ser visualizado tbm depois, pra identificarmos possiveis melhorias no tamanho do bundle
+pelo site [analyze](https://esbuild.github.io/analyze/)
+
+![img_1.png](img_1.png)
+
+recomendo esses outros artigos que usei pra estudar, e que são excelentes.
+[Fabio Zuin](https://medium.com/@fabiozuin/performance-you-should-keep-an-eye-on-your-bundle-constantly-and-here-is-how-40f0c00a64fb)
+[Mohammedfahimullah ](https://mohammedfahimullah.medium.com/optimize-the-bundle-size-using-source-map-explorer-5e848850e578)
+[Tim Deschryver](https://timdeschryver.dev/bits/optimize-your-bundle-size-with-source-map-explorer)
+[Tomas Trajan](https://angularexperts.io/blog/top-10-angular-architecture-mistakes)
+[Webpack Bundle](https://blog.jakoblind.no/webpack-bundle-analyzer/)
+[Rose Waitherero Chege](https://www.debugbear.com/blog/webpack-bundle-analyzer)
+[Matti Bar-Zeev](https://dev.to/mbarzeev/everything-you-need-to-know-about-webpacks-bundle-analyzer-g0l)
+
+
+
+### Eslint
+O ESLint é uma ferramenta de linting popular para códigos JavaScript e TypeScript.Ajuda os desenvolvedores
+a identificar e corrigir problemas no código, como erros de sintaxe ou padrões 
+de codificação que não seguem as melhores práticas. Mantendo o padrão 
+em projetos grandes ou quando várias pessoas estão trabalhando no mesmo projeto. So que o eslint não 
+vem integrado por padrão no Angular CLI, so que é muito 
+facil adicionar e configurar o usando Angular schematics, que automatizam o processo de instalação
+e configuração inicial.
+
+![img_2.png](docs/imgs/img_2.png)

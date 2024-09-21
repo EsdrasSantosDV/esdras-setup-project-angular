@@ -9,7 +9,10 @@
     "test": "ng test",
     "format:test": "prettier --list-different \"./projects/**/*.{ts,html,scss,json}\"",
     "format:write": "prettier --write \"./projects/**/*.{ts,html,scss,json}\"",
-    "prepare": "husky"
+    "analyze": "ng build --stats-json --output-hashing=none --named-chunks && esbuild-visualizer --template treemap --metadata dist/frontend-school/stats.json --filename dist/frontend-school/analyse/index.html  && http-server -o -c-1 ./dist/frontend-school/analyse/",
+    "analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/frontend-school/browser/*.js --html dist/frontend-school/sme/index.html && http-server -o -c-1 ./dist/frontend-school/sme/",
+    "prepare": "husky",
+    "lint": "ng lint"
   },
   "private": true,
   "dependencies": {
@@ -30,6 +33,10 @@
     "@angular/cli": "^18.2.5",
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
+    "angular-eslint": "18.3.1",
+    "esbuild-visualizer": "^0.6.0",
+    "eslint": "^9.9.1",
+    "http-server": "^14.1.1",
     "husky": "^9.1.6",
     "jasmine-core": "~5.2.0",
     "karma": "~6.4.0",
@@ -38,6 +45,8 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "prettier": "^3.3.3",
-    "typescript": "~5.5.2"
+    "source-map-explorer": "^2.5.3",
+    "typescript": "~5.5.2",
+    "typescript-eslint": "8.2.0"
   }
 }

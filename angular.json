@@ -106,11 +106,24 @@
             ],
             "scripts": []
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/frontend-school/**/*.ts",
+              "projects/frontend-school/**/*.html"
+            ],
+            "eslintConfig": "projects/frontend-school/eslint.config.js"
+          }
         }
       }
     }
   },
   "cli": {
-    "analytics": "5cdfceb5-016d-48be-a596-aa87d4e51d85"
+    "analytics": "5cdfceb5-016d-48be-a596-aa87d4e51d85",
+    "schematicCollections": [
+      "@angular-eslint/schematics"
+    ]
   }
 }
