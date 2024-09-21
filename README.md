@@ -1,27 +1,65 @@
 # EsdrasProject
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.5.
+
+
+
+
+
+Configuração do Ambiente
+Primeiramente, é essencial garantir que estamos utilizando versões do Node.js e NPM que sejam compatíveis e suportadas. Para isso, é necessário verificar as versões ativamente suportadas conforme indicado na documentação oficial do Angular em Angular.dev.
+
+Siga os passos abaixo para configurar seu ambiente:
+
+
 
 ## Development server
+Para verificar a versão do Node.js instalada localmente em sua máquina, você pode executar o seguinte comando no terminal:
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Pra esse projeto e setup usei  essas versoes, recomendo usar o nvm pra facilitar a troca
+[nvm](https://github.com/nvm-sh/nvm)
+```bash
+node --version v20.12.1
+npm --version 
+pnpm --version 8.15.6
+```
 
-## Code scaffolding
+Instalar o angular cli na versão mais recente.
+recomendo desistalar a versão na maquina
+```bash
+pnpm install -g @angular/cli@latest
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+ng version
+```
+![img.png](docs/imgs/img.png)
+### Workspace
+Criar o workspace do projeto
 
-## Build
+```bash
+ng new esdras-project --create-application false --prefix esdras-khan
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+ai vai criar o workspace, com o angular.json quase vazio
+![img_1.png](docs/imgs/img_1.png)
 
-## Running unit tests
+vamos colcoar o primeiro app dentro dele
+colocando roteamento, estilo, e definindo se a aplicação vai ser com ssr ou não!.
+```bash
+ng g application frontend-school --prefix esdras-khan --routing --style=scss --strict --ssr false
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+```
+![img_1.png](docs/imgs/img2.png)
+com isso nosso project ja esta criado
+![img.png](docs/imgs/appcriado.png)
 
-## Running end-to-end tests
+### Schematics
+Para garantir que todos os novos componentes criados no seu projeto Angular 
+sigam padrões específicos,
+como o uso da estratégia de detecção de mudanças OnPush, 
+você pode configurar os schematics no arquivo angular.json.
+Isso não apenas otimiza a detecção de alterações, mas também 
+estabelece uma prática consistente entre os desenvolvedores do projeto.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+
