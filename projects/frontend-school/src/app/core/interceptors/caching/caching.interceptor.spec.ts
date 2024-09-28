@@ -4,7 +4,7 @@ import { HttpInterceptorFn } from '@angular/common/http';
 import { cachingInterceptor } from './caching.interceptor';
 
 describe('cachingInterceptor', () => {
-  const interceptor: HttpInterceptorFn = (req, next) => 
+  const interceptor: HttpInterceptorFn = (req, next) =>
     TestBed.runInInjectionContext(() => cachingInterceptor(req, next));
 
   beforeEach(() => {

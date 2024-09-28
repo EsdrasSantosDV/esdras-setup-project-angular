@@ -12,7 +12,6 @@ import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptor
 import { spinnerInterceptor } from './interceptors/spinner/spinner.interceptor';
 import { authInterceptor } from './interceptors/auth/auth.interceptor';
 import { loggingInterceptor } from './interceptors/logging/logging.interceptor';
-import { cachingInterceptor } from './interceptors/caching/caching.interceptor';
 import { AppInterceptor } from './interceptors/app/app.interceptor';
 
 export interface CoreOptions {
@@ -25,7 +24,7 @@ export function provideCore({ routes }: CoreOptions) {
     provideAnimationsAsync(),
     provideHttpClient(
       withInterceptorsFromDi(),
-      withInterceptors([spinnerInterceptor, authInterceptor, loggingInterceptor, cachingInterceptor]),
+      withInterceptors([spinnerInterceptor, authInterceptor, loggingInterceptor]),
     ),
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
     provideRouter(
