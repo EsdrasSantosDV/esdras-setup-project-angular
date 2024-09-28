@@ -1,0 +1,141 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+
+$_palettes: (
+  primary: (
+    0: #000000,
+    10: #001a41,
+    20: #002e68,
+    25: #00397d,
+    30: #004493,
+    35: #004fa9,
+    40: #005bc0,
+    50: #0073ef,
+    60: #4a8eff,
+    70: #7fabff,
+    80: #adc7ff,
+    90: #d8e2ff,
+    95: #edf0ff,
+    98: #f9f9ff,
+    99: #fefbff,
+    100: #ffffff,
+  ),
+  secondary: (
+    0: #000000,
+    10: #0c1b36,
+    20: #22304c,
+    25: #2d3b57,
+    30: #394763,
+    35: #445270,
+    40: #505e7c,
+    50: #697796,
+    60: #8391b1,
+    70: #9dabcd,
+    80: #b8c6e9,
+    90: #d8e2ff,
+    95: #edf0ff,
+    98: #f9f9ff,
+    99: #fefbff,
+    100: #ffffff,
+  ),
+  tertiary: (
+    0: #000000,
+    10: #2f0a38,
+    20: #47214f,
+    25: #532c5b,
+    30: #603867,
+    35: #6c4373,
+    40: #794f80,
+    50: #94689a,
+    60: #af81b5,
+    70: #cc9bd1,
+    80: #e8b6ee,
+    90: #fdd6ff,
+    95: #ffebfd,
+    98: #fff7fa,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+  neutral: (
+    0: #000000,
+    10: #1b1b1f,
+    20: #2f3033,
+    25: #3b3b3f,
+    30: #46464a,
+    35: #525256,
+    40: #5e5e62,
+    50: #77777a,
+    60: #919094,
+    70: #ababaf,
+    80: #c7c6ca,
+    90: #e3e2e6,
+    95: #f2f0f4,
+    98: #faf9fd,
+    99: #fefbff,
+    100: #ffffff,
+  ),
+  neutral-variant: (
+    0: #000000,
+    10: #191c22,
+    20: #2d3038,
+    25: #393b43,
+    30: #44474f,
+    35: #50525a,
+    40: #5c5e66,
+    50: #74777f,
+    60: #8e9099,
+    70: #a9abb4,
+    80: #c4c6d0,
+    90: #e1e2ec,
+    95: #eff0fa,
+    98: #f9f9ff,
+    99: #fefbff,
+    100: #ffffff,
+  ),
+  error: (
+    0: #000000,
+    10: #410002,
+    20: #690005,
+    25: #7e0007,
+    30: #93000a,
+    35: #a80710,
+    40: #ba1a1a,
+    50: #de3730,
+    60: #ff5449,
+    70: #ff897d,
+    80: #ffb4ab,
+    90: #ffdad6,
+    95: #ffedea,
+    98: #fff8f7,
+    99: #fffbff,
+    100: #ffffff,
+  ),
+);
+
+$_rest: (
+  secondary: map.get($_palettes, secondary),
+  neutral: map.get($_palettes, neutral),
+  neutral-variant: map.get($_palettes, neutral-variant),
+  error: map.get($_palettes, error),
+);
+$_primary: map.merge(map.get($_palettes, primary), $_rest);
+$_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_primary,
+      tertiary: $_tertiary,
+    ),
+  )
+);
+$dark-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: dark,
+      primary: $_primary,
+      tertiary: $_tertiary,
+    ),
+  )
+);

@@ -215,6 +215,7 @@ e não coloquei nada, ele ja apita que tem erro.
 ![img.png](OnIitLINT.png)
 
 ### Tamanho de pacote e build
+
 Uma coisa que nunca parava pra pensar, em questão de frontend, era o tamanho do pacote,
 sempre pensava em questão colocar lazy loading nos modulos, mas nunca olhava ferramentas que poderia me ajudar
 em questão de analise do tamanho dos pacotes de uma aplicação no frontend, em pesquisas descobri 3 ferramentas
@@ -222,11 +223,10 @@ que que podem ser usadas para analisar o tamanho do pacote:
 
 1. esbuild-visualizer: Bom para quem usa esbuild. Ele cria uns arquivos que precisam de um servidor tipo HTTP para você ver o que está acontecendo. Dá para ver tudo em formatos diferentes, como treemap, que é o mais comum.
 2. source-map-explorer
-   Adequado para: Qualquer projeto que produza mapas de fonte, mas é mais simples e não tão bonito quanto outros. 
+   Adequado para: Qualquer projeto que produza mapas de fonte, mas é mais simples e não tão bonito quanto outros.
 3. webpack-bundle-analyzer :É a mais usada, mas só vale para quem não tá no esbuild. Se seu projeto é antigo e usa webpack, essa é a ferramenta.
 
 Essas ferramentas ajudam a manter a eficiência de sua aplicação ao permitir uma gestão cuidadosa do tamanho do pacote, essencial para otimizar os tempos de carga e melhorar a experiência geral de desenvolvimento.
-
 
 vamos usar o esbuild e o source-map-explorer
 
@@ -265,15 +265,71 @@ recomendo esses outros artigos que usei pra estudar, e que são excelentes.
 [Rose Waitherero Chege](https://www.debugbear.com/blog/webpack-bundle-analyzer)
 [Matti Bar-Zeev](https://dev.to/mbarzeev/everything-you-need-to-know-about-webpacks-bundle-analyzer-g0l)
 
-
-
 ### Eslint
+
 O ESLint é uma ferramenta de linting popular para códigos JavaScript e TypeScript.Ajuda os desenvolvedores
-a identificar e corrigir problemas no código, como erros de sintaxe ou padrões 
-de codificação que não seguem as melhores práticas. Mantendo o padrão 
-em projetos grandes ou quando várias pessoas estão trabalhando no mesmo projeto. So que o eslint não 
-vem integrado por padrão no Angular CLI, so que é muito 
+a identificar e corrigir problemas no código, como erros de sintaxe ou padrões
+de codificação que não seguem as melhores práticas. Mantendo o padrão
+em projetos grandes ou quando várias pessoas estão trabalhando no mesmo projeto. So que o eslint não
+vem integrado por padrão no Angular CLI, so que é muito
 facil adicionar e configurar o usando Angular schematics, que automatizam o processo de instalação
 e configuração inicial.
 
 ![img_2.png](docs/imgs/img_2.png)
+<<<<<<< HEAD
+=======
+
+No webstorm pra configurar
+![img.png](docs/imgs/eslint.png)
+
+É o eslint ajuda pra caramba, nesse caso que eu implementei um lifecycle do componente
+
+![img.png](docs/imgs/OnIitLINT.png)
+
+### Dependencias
+
+A análise de grafo de dependência serve
+para garantir que as dependências entre
+módulos de um projeto sigam uma direção única,
+sem criar loops ou ciclos.
+Isso ajuda a manter o código organizado ,
+fácil de manter e com menos risco de
+erros ao adicionar ou modificar partes do sistema.
+
+Pra isso vamos usar uma ferramenta que tem bastante adoção por meio da comunidade que é o
+[madge](https://www.npmjs.com/package/madge)
+
+pra instalar ela
+
+```
+pnpm i -D madge npm-run-all
+```
+
+e instalar no linux
+
+```
+sudo apt-get install graphviz
+
+```
+
+![img_1.png](docs/imgs/deps.png)
+
+### Angular material
+
+![img_1.png](docs/imgs/material.png)
+
+temos o builder
+![img_1.png](docs/imgs/decidir-suas-cores.png)
+
+### Tailwind
+
+``` bash
+pnpm install -D tailwindcss postcss autoprefixer
+```
+
+Inicializar o tailwind
+
+```bash
+npx tailwindcss init -p
+```
+

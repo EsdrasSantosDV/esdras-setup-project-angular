@@ -12,15 +12,19 @@
     "analyze": "ng build --stats-json --output-hashing=none --named-chunks && esbuild-visualizer --template treemap --metadata dist/frontend-school/stats.json --filename dist/frontend-school/analyse/index.html  && http-server -o -c-1 ./dist/frontend-school/analyse/",
     "analyze:sme": "ng build --source-map --output-hashing=none --named-chunks && source-map-explorer dist/frontend-school/browser/*.js --html dist/frontend-school/sme/index.html && http-server -o -c-1 ./dist/frontend-school/sme/",
     "prepare": "husky",
-    "lint": "ng lint"
+    "lint": "ng lint",
+    "analyze:deps": "npm-run-all analyze:deps:*",
+    "analyze:deps:all": "madge projects/frontend-school/src/main.ts --ts-config tsconfig.json"
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
+    "@angular/cdk": "18.2.6",
     "@angular/common": "^18.2.0",
     "@angular/compiler": "^18.2.0",
     "@angular/core": "^18.2.0",
     "@angular/forms": "^18.2.0",
+    "@angular/material": "18.2.6",
     "@angular/platform-browser": "^18.2.0",
     "@angular/platform-browser-dynamic": "^18.2.0",
     "@angular/router": "^18.2.0",
@@ -34,6 +38,7 @@
     "@angular/compiler-cli": "^18.2.0",
     "@types/jasmine": "~5.1.0",
     "angular-eslint": "18.3.1",
+    "autoprefixer": "^10.4.20",
     "esbuild-visualizer": "^0.6.0",
     "eslint": "^9.9.1",
     "http-server": "^14.1.1",
@@ -44,8 +49,12 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "madge": "^8.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "source-map-explorer": "^2.5.3",
+    "tailwindcss": "^3.4.13",
     "typescript": "~5.5.2",
     "typescript-eslint": "8.2.0"
   }
