@@ -38,6 +38,21 @@ dependencies:
   '@jsverse/transloco':
     specifier: 7.5.0
     version: 7.5.0(@angular/core@18.2.5)(typescript@5.5.4)
+  '@ngrx/operators':
+    specifier: ^18.0.2
+    version: 18.0.2(rxjs@7.8.1)
+  '@ngrx/router-store':
+    specifier: ^18.0.2
+    version: 18.0.2(@angular/common@18.2.5)(@angular/core@18.2.5)(@angular/router@18.2.5)(@ngrx/store@18.0.2)(rxjs@7.8.1)
+  '@ngrx/signals':
+    specifier: ^18.0.2
+    version: 18.0.2(@angular/core@18.2.5)(rxjs@7.8.1)
+  '@ngrx/store':
+    specifier: ^18.0.2
+    version: 18.0.2(@angular/core@18.2.5)(rxjs@7.8.1)
+  '@ngrx/store-devtools':
+    specifier: ^18.0.2
+    version: 18.0.2(@ngrx/store@18.0.2)(rxjs@7.8.1)
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
@@ -58,6 +73,12 @@ devDependencies:
   '@angular/compiler-cli':
     specifier: ^18.2.0
     version: 18.2.5(@angular/compiler@18.2.5)(typescript@5.5.4)
+  '@ngrx/eslint-plugin':
+    specifier: 18.0.2
+    version: 18.0.2(@typescript-eslint/utils@8.7.0)(eslint@9.11.1)(typescript@5.5.4)
+  '@ngrx/schematics':
+    specifier: ^18.0.2
+    version: 18.0.2
   '@types/jasmine':
     specifier: ~5.1.0
     version: 5.1.4
@@ -2829,6 +2850,86 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@ngrx/eslint-plugin@18.0.2(@typescript-eslint/utils@8.7.0)(eslint@9.11.1)(typescript@5.5.4):
+    resolution: {integrity: sha512-4ADWIE5zv1krT74Kv9dDJjtbLMbTd9BmVVuSx1MJW5RXzd05aBLWie91Dd3agtl0PFBEgT1ErxwoEF5wOcrh6w==}
+    peerDependencies:
+      '@typescript-eslint/utils': ^7.11.0 || ^8.0.0-alpha.20
+      eslint: ^8.57.0 || ^9.0.0
+      typescript: '*'
+    dependencies:
+      '@typescript-eslint/utils': 8.7.0(eslint@9.11.1)(typescript@5.5.4)
+      eslint: 9.11.1
+      semver: 7.6.3
+      strip-json-comments: 3.1.1
+      typescript: 5.5.4
+    dev: true
+
+  /@ngrx/operators@18.0.2(rxjs@7.8.1):
+    resolution: {integrity: sha512-4dyNkVKBw9ZqECMJu6bT2t21p3ANaMC+ZkcfiBfv5OUEFtB9HhN5uCem9tcgYeNBK8XQFA7/1tzd1T3KaiBY8A==}
+    peerDependencies:
+      rxjs: ^6.5.3 || ^7.4.0
+    dependencies:
+      rxjs: 7.8.1
+      tslib: 2.7.0
+    dev: false
+
+  /@ngrx/router-store@18.0.2(@angular/common@18.2.5)(@angular/core@18.2.5)(@angular/router@18.2.5)(@ngrx/store@18.0.2)(rxjs@7.8.1):
+    resolution: {integrity: sha512-jUrQ/uJJ53x8O1XbN2YxH2GpRREZlwS5gRxlCoc4fWL4Us/uS1/K6+QfRmKBPtpTKBIixqsOb+dIUV5iwBrivA==}
+    peerDependencies:
+      '@angular/common': ^18.0.0
+      '@angular/core': ^18.0.0
+      '@angular/router': ^18.0.0
+      '@ngrx/store': 18.0.2
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/common': 18.2.5(@angular/core@18.2.5)(rxjs@7.8.1)
+      '@angular/core': 18.2.5(rxjs@7.8.1)(zone.js@0.14.10)
+      '@angular/router': 18.2.5(@angular/common@18.2.5)(@angular/core@18.2.5)(@angular/platform-browser@18.2.5)(rxjs@7.8.1)
+      '@ngrx/store': 18.0.2(@angular/core@18.2.5)(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.7.0
+    dev: false
+
+  /@ngrx/schematics@18.0.2:
+    resolution: {integrity: sha512-vJZyH6ngJuGL/kd6XBRmp5hh1ik3KiE12CkRWSi7ha7fDNaXIdfGNj02oaXlRG/GvJFQOG/BQlxKkMTUviuaGw==}
+    dev: true
+
+  /@ngrx/signals@18.0.2(@angular/core@18.2.5)(rxjs@7.8.1):
+    resolution: {integrity: sha512-FXmcY2cmkbhZtg9k8Ntq69SyelGmmb6fWtdButH4T8GGFH0o3f1FZTR829j4ynphy8SzuDhD/pzrnpWcV481oQ==}
+    peerDependencies:
+      '@angular/core': ^18.0.0
+      rxjs: ^6.5.3 || ^7.4.0
+    peerDependenciesMeta:
+      rxjs:
+        optional: true
+    dependencies:
+      '@angular/core': 18.2.5(rxjs@7.8.1)(zone.js@0.14.10)
+      rxjs: 7.8.1
+      tslib: 2.7.0
+    dev: false
+
+  /@ngrx/store-devtools@18.0.2(@ngrx/store@18.0.2)(rxjs@7.8.1):
+    resolution: {integrity: sha512-NcfVGUOGNvl1luV+Lt8KDqqwuwNYYaSbEuGi4mq70Hb4ws3sO6BFL9v+AeHLCQ51vKccL/cYqDNMYe4QMD7UaA==}
+    peerDependencies:
+      '@ngrx/store': 18.0.2
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@ngrx/store': 18.0.2(@angular/core@18.2.5)(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.7.0
+    dev: false
+
+  /@ngrx/store@18.0.2(@angular/core@18.2.5)(rxjs@7.8.1):
+    resolution: {integrity: sha512-ajwv0+njsO4vzArp9esnFvs1wyUb1U1W8E8LSCKrcW2hWWo9o1Pezj+JRsdQwatxHfrrPFuTDyajsl6GQM/JSA==}
+    peerDependencies:
+      '@angular/core': ^18.0.0
+      rxjs: ^6.5.3 || ^7.5.0
+    dependencies:
+      '@angular/core': 18.2.5(rxjs@7.8.1)(zone.js@0.14.10)
+      rxjs: 7.8.1
+      tslib: 2.7.0
+    dev: false
 
   /@ngtools/webpack@18.2.5(@angular/compiler-cli@18.2.5)(typescript@5.5.4)(webpack@5.94.0):
     resolution: {integrity: sha512-L0n4eHObeqEOYRfSP+e4SeF/dmwxOIFy9xYvYCOUwOLrW4b3+a1+kkT30pqyfL72LFtpf0cmUwaWEFIcWl5PCg==}

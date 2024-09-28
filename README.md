@@ -376,5 +376,18 @@ precisamos remover o zones js do polyfil
 ng add @jsverse/transloco
 ```
 
-e configurar no core
+e configurar no core as linguagens, podemos tambem fazer um setup de companhias
+e cada companhia ter o seu determinado texto
 ![img_3.png](img_3.png)
+
+### NGRX
+
+```bash
+ ng add @ngrx/store@latest    
+ ng add @ngrx/store-devtools@latest
+ ng add @ngrx/signals@latest
+ ng add @ngrx/operators@latest
+ ng add @ngrx/eslint-plugin
+ ng add @ngrx/schematics@latest
+ ng add @ngrx/router-store@latest
+```

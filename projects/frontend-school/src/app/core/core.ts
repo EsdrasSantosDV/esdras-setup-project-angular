@@ -15,6 +15,9 @@ import { loggingInterceptor } from './interceptors/logging/logging.interceptor';
 import { AppInterceptor } from './interceptors/app/app.interceptor';
 import { provideTransloco } from '@jsverse/transloco';
 import { TranslocoService } from './transloco/transloco-loader';
+import { provideStore } from '@ngrx/store';
+import { provideStoreDevtools } from '@ngrx/store-devtools';
+import { provideRouterStore } from '@ngrx/router-store';
 
 export interface CoreOptions {
   routes: Routes;
@@ -50,5 +53,14 @@ export function provideCore({ routes }: CoreOptions) {
       },
       loader: TranslocoService,
     }),
+    provideStore(),
+    provideStoreDevtools({
+      maxAge: 25,
+      logOnly: !isDevMode(),
+      autoPause: true,
+      trace: true,
+      traceLimit: 75,
+    }),
+    provideRouterStore(),
   ];
 }
