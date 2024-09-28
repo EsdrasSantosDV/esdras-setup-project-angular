@@ -32,7 +32,6 @@
             "index": "projects/frontend-school/src/index.html",
             "browser": "projects/frontend-school/src/main.ts",
             "polyfills": [
-              "zone.js"
             ],
             "tsConfig": "projects/frontend-school/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
@@ -90,8 +89,6 @@
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
             "polyfills": [
-              "zone.js",
-              "zone.js/testing"
             ],
             "tsConfig": "projects/frontend-school/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
