@@ -25,6 +25,10 @@ export class AuthKeycloakService {
     return this.keycloakService.isLoggedIn();
   }
 
+  getToken() {
+    return this.keycloakService.getKeycloakInstance().token;
+  }
+
   logout(): void {
     this.keycloakService.logout(environment.keycloak.postLogoutRedirectUri);
   }
