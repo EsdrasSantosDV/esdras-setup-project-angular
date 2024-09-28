@@ -6,7 +6,12 @@ import {
   withInMemoryScrolling,
   withRouterConfig,
 } from '@angular/router';
-import { isDevMode, provideExperimentalZonelessChangeDetection } from '@angular/core';
+import {
+  APP_INITIALIZER,
+  importProvidersFrom,
+  isDevMode,
+  provideExperimentalZonelessChangeDetection,
+} from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { spinnerInterceptor } from './interceptors/spinner/spinner.interceptor';
@@ -18,6 +23,8 @@ import { TranslocoService } from './transloco/transloco-loader';
 import { provideStore } from '@ngrx/store';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
 import { provideRouterStore } from '@ngrx/router-store';
+import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
+import { initializeKeycloak } from './keycloak/keycloak-init';
 
 export interface CoreOptions {
   routes: Routes;
@@ -62,5 +69,12 @@ export function provideCore({ routes }: CoreOptions) {
       traceLimit: 75,
     }),
     provideRouterStore(),
+    importProvidersFrom([KeycloakAngularModule]),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
+    },
   ];
 }

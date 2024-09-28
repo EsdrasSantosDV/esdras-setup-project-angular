@@ -208,7 +208,7 @@ e configuração inicial.
 ![img_2.png](docs/imgs/img_2.png)
 
 No webstorm pra configurar
-![img.png](img.png)
+![img.png](docs/imgs/change.png)
 
 É o eslint ajuda pra caramba, nesse caso que eu implementei um lifecycle do componente
 e não coloquei nada, ele ja apita que tem erro.
@@ -254,7 +254,7 @@ focando-se principalmente na exibição dos componentes do pacote com base nos m
 enquanto o esbuild, gera um arquivo que pode ser visualizado tbm depois, pra identificarmos possiveis melhorias no tamanho do bundle
 pelo site [analyze](https://esbuild.github.io/analyze/)
 
-![img_1.png](img_1.png)
+![img_1.png](docs/imgs/bud.png)
 
 recomendo esses outros artigos que usei pra estudar, e que são excelentes.
 [Fabio Zuin](https://medium.com/@fabiozuin/performance-you-should-keep-an-eye-on-your-bundle-constantly-and-here-is-how-40f0c00a64fb)
@@ -365,7 +365,7 @@ export function provideCore({ routes }: CoreOptions) {
 ```
 
 so que recebmos um erro no navegador, dizendo que precisamos remover o zone.js do polyfil
-![img.png](img.png)
+![img.png](docs/imgs/change.png)
 precisamos remover o zones js do polyfil
 
 ![img_2.png](img_2.png)
@@ -378,7 +378,7 @@ ng add @jsverse/transloco
 
 e configurar no core as linguagens, podemos tambem fazer um setup de companhias
 e cada companhia ter o seu determinado texto
-![img_3.png](img_3.png)
+![img_3.png](docs/imgs/img_3.png)
 
 ### NGRX
 
@@ -390,4 +390,200 @@ e cada companhia ter o seu determinado texto
  ng add @ngrx/eslint-plugin
  ng add @ngrx/schematics@latest
  ng add @ngrx/router-store@latest
+```
+
+gosto dessas configuraçoes
+
+```ts
+  provideStore(),
+  provideStoreDevtools({
+    maxAge: 25,
+    logOnly: !isDevMode(),
+    autoPause: true,
+    trace: true,
+    traceLimit: 75,
+  }),
+  provideRouterStore(),
+```
+
+### Keycloak Angular
+
+ter um ambiente com o keycloak, nesse caso, usei um docker pra subir o keycloak
+e configurei o realm e o client no keycloak, coloquei uma pasta na raiz desse projeto
+com um compose, pra subir o keycloak, peguei na propria documentação do keycloak angular,
+posteriormente, realizarei um artigo sobre como subir o keycloak pra nuvem
+
+```docker
+version: '3'
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.0
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+    ports:
+      - 8080:8080
+    volumes:
+      - ./config/:/opt/keycloak/data/import:ro
+    entrypoint: '/opt/keycloak/bin/kc.sh start-dev --import-realm'
+```
+
+depois disso abrir o localhost:8080 e logar com o admin e a senha admin
+![img_4.png](docs/imgs/img_4.png)
+
+entramos na tela de configuração do keycloak
+
+![img_5.png](docs/imgs/img_5.png)
+
+vamos criar nosso reino
+
+![img_7.png](docs/imgs/img_7.png)
+na opcao do menu a direita, vamos em add realm
+
+depois disso, nos criamos nosso client, e salvamos nosso client id pra posteriormente
+configurar no frontend
+![img_15.png](docs/imgs/img_15.png)
+deixamos por padrão
+![img_16.png](docs/imgs/img_16.png)
+
+colocamos as url de redirecionamento
+
+![img_17.png](docs/imgs/img_17.png)
+
+criar o usuario
+
+![img_11.png](docs/imgs/img_11.png)
+
+colocar a senha
+![img_12.png](docs/imgs/img_12.png)
+
+```bash
+pnpm  i keycloak-angular
+pnpm i keycloak-js
+
+```
+
+depois de instalar e so criar um arquivo html na pasta assets
+
+```html
+
+<html>
+<body>
+<script>
+  parent.postMessage(location.href, location.origin);
+</script>
+</body>
+</html>
+```
+
+e configurar o init do keycloak
+
+```ts
+import { KeycloakService } from 'keycloak-angular';
+import { environment } from '../../../environments/environment';
+
+export function initializeKeycloak(keycloak: KeycloakService) {
+  return async () =>
+    keycloak.init({
+      config: {
+        url: environment.keycloak.authority,
+        realm: environment.keycloak.realm,
+        clientId: environment.keycloak.clientId,
+      },
+      loadUserProfileAtStartUp: true,
+      initOptions: {
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri: window.location.origin + '/silent-check-sso.html',
+        checkLoginIframe: false,
+        redirectUri: environment.keycloak.redirectUri,
+      },
+    });
+}
+
+```
+
+depois
+quando
+rodar
+o
+projeto, pedira
+pra
+logar, e
+depois
+de
+logar, vai
+redirecionar
+pra
+pagina
+principal
+
+vi
+alguns
+desenvolvedores
+tendo
+dificuldade
+em
+configurar
+o
+keycloak, com
+standalone,
+o
+segredo
+e
+pra
+nessas
+situaçoes
+que
+exigirem
+modulos
+colocar
+o
+importProvidersFrom
+
+  ``` tipescript
+ importProvidersFrom([KeycloakAngularModule]),
+    {
+      provide: APP_INITIALIZER,
+      useFactory: initializeKeycloak,
+      multi: true,
+      deps: [KeycloakService],
+    },
+```
+
+e temos um serviço construido
+
+```ts
+import { inject, Injectable } from '@angular/core';
+import { KeycloakService } from 'keycloak-angular';
+import { KeycloakProfile } from 'keycloak-js';
+import { environment } from '../../../environments/environment';
+
+@Injectable({
+  providedIn: 'root',
+})
+export class AuthKeycloakService {
+  readonly keycloakService = inject(KeycloakService);
+
+  redirectToLoginPage(): Promise<void> {
+    return this.keycloakService.login();
+  }
+
+  getUserName() {
+    return this.keycloakService.getUsername();
+  }
+
+  async loadUserProfile(): Promise<KeycloakProfile> {
+    return await this.keycloakService.loadUserProfile();
+  }
+
+  isLoggedIn(): boolean {
+    return this.keycloakService.isLoggedIn();
+  }
+
+  logout(): void {
+    this.keycloakService.logout(environment.keycloak.postLogoutRedirectUri);
+  }
+}
+
+
 ```
