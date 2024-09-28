@@ -369,3 +369,12 @@ so que recebmos um erro no navegador, dizendo que precisamos remover o zone.js d
 precisamos remover o zones js do polyfil
 
 ![img_2.png](img_2.png)
+
+### Transloco
+
+``` bash
+ng add @jsverse/transloco
+```
+
+e configurar no core
+![img_3.png](img_3.png)

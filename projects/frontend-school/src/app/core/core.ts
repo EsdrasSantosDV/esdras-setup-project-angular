@@ -6,13 +6,15 @@ import {
   withInMemoryScrolling,
   withRouterConfig,
 } from '@angular/router';
-import { provideExperimentalZonelessChangeDetection } from '@angular/core';
+import { isDevMode, provideExperimentalZonelessChangeDetection } from '@angular/core';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptors, withInterceptorsFromDi } from '@angular/common/http';
 import { spinnerInterceptor } from './interceptors/spinner/spinner.interceptor';
 import { authInterceptor } from './interceptors/auth/auth.interceptor';
 import { loggingInterceptor } from './interceptors/logging/logging.interceptor';
 import { AppInterceptor } from './interceptors/app/app.interceptor';
+import { provideTransloco } from '@jsverse/transloco';
+import { TranslocoService } from './transloco/transloco-loader';
 
 export interface CoreOptions {
   routes: Routes;
@@ -39,5 +41,14 @@ export function provideCore({ routes }: CoreOptions) {
         scrollPositionRestoration: 'enabled',
       }),
     ),
+    provideTransloco({
+      config: {
+        availableLangs: ['pt', 'en'],
+        defaultLang: 'pt',
+        reRenderOnLangChange: true,
+        prodMode: !isDevMode(),
+      },
+      loader: TranslocoService,
+    }),
   ];
 }
