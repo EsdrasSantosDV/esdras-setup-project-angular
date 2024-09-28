@@ -584,6 +584,50 @@ export class AuthKeycloakService {
     this.keycloakService.logout(environment.keycloak.postLogoutRedirectUri);
   }
 }
+```
 
+### Setup simples de variaveis de ambiente
 
+criar no source do projeto um arquivo de enviroment de prod, e de dev, depois vou ensinar como
+fazer o ci e cd, e subir na nuvem
+
+```ts
+//DEV
+export const environment = {
+  production: true,
+  keycloak: {
+    authority: 'http://localhost:8080',
+    redirectUri: 'http://localhost:4200',
+    postLogoutRedirectUri: 'http://localhost:4200/logout',
+    realm: 'frontend-school',
+    clientId: 'frontend_esdras_khan',
+  },
+};
+//PROD
+export const environment = {
+  production: true,
+  keycloak: {
+    authority: 'PRODUCTION',
+    redirectUri: 'PRODUCTION',
+    postLogoutRedirectUri: 'PRODUCTION',
+    realm: 'PRODUCTION',
+    clientId: 'PRODUCTION',
+  },
+};
+```
+
+e lembrar de colocar no angular.json
+
+```json
+   "development": {
+"optimization": false,
+"extractLicenses": false,
+"sourceMap": true,
+"fileReplacements": [
+{
+"replace": "projects/frontend-school/src/environments/environment.ts",
+"with": "projects/frontend-school/src/environments/environment.development.ts"
+}
+]
+}
 ```

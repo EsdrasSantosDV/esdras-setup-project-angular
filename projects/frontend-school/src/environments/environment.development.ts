@@ -1,5 +1,5 @@
 export const environment = {
-  production: true,
+  production: false,
   keycloak: {
     authority: 'http://localhost:8080',
     redirectUri: 'http://localhost:4200',
