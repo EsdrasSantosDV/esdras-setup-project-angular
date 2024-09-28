@@ -368,7 +368,7 @@ so que recebmos um erro no navegador, dizendo que precisamos remover o zone.js d
 ![img.png](docs/imgs/change.png)
 precisamos remover o zones js do polyfil
 
-![img_2.png](img_2.png)
+![img_2.png](docs/imgs/remove-zone.png)
 
 ### Transloco
 
