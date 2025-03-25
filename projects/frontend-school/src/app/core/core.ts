@@ -69,12 +69,5 @@ export function provideCore({ routes }: CoreOptions) {
       traceLimit: 75,
     }),
     provideRouterStore(),
-    importProvidersFrom([KeycloakAngularModule]),
-    {
-      provide: APP_INITIALIZER,
-      useFactory: initializeKeycloak,
-      multi: true,
-      deps: [KeycloakService],
-    },
   ];
 }
