@@ -21,8 +21,8 @@ export class NoopValueAccessorDirective implements ControlValueAccessor {
     this.onChange = fn;
   }
 
-  registerOnTouched(): void {
-    this.onTouched = () => {};
+  registerOnTouched(fn: any): void {
+    this.onTouched = fn;
   }
 
   setDisabledState() {}
