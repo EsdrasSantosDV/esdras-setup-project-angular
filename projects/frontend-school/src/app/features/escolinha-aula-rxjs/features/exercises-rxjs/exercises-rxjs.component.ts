@@ -10,6 +10,11 @@ import { ExercicioEightComponent } from '../../ui/exercicio-eight/exercicio-eigh
 import { ExercicioTenComponent } from '../../ui/exercicio-ten/exercicio-ten.component';
 import { ExercicioNineComponent } from '../../ui/exercicio-nine/exercicio-nine.component';
 import { ExercicioSixComponent } from '../../ui/exercicio-six/exercicio-six.component';
+import { ExerciseElevenComponent } from '../../ui/exercise-eleven/exercise-eleven.component';
+import { ExerciseTwelveComponent } from '../../ui/exercise-twelve/exercise-twelve.component';
+import { ExerciseThirteenComponent } from '../../ui/exercise-thirteen/exercise-thirteen.component';
+import { ExerciseFourteenComponent } from '../../ui/exercise-fourteen/exercise-fourteen.component';
+import { ExerciseFifteenComponent } from '../../ui/exercise-fifteen/exercise-fifteen.component';
 
 @Component({
   selector: 'esdras-khan-exercises-rxjs',
@@ -26,6 +31,11 @@ import { ExercicioSixComponent } from '../../ui/exercicio-six/exercicio-six.comp
     ExercicioTenComponent,
     ExercicioNineComponent,
     ExercicioSixComponent,
+    ExerciseElevenComponent,
+    ExerciseTwelveComponent,
+    ExerciseThirteenComponent,
+    ExerciseFourteenComponent,
+    ExerciseFifteenComponent,
   ],
   templateUrl: './exercises-rxjs.component.html',
   styleUrl: './exercises-rxjs.component.scss',
