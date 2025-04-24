@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'esdras-khan-footer',
+  selector: 'ef-footer',
   standalone: true,
   imports: [],
   templateUrl: './footer.component.html',

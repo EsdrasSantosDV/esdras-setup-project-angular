@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { MainLayoutComponent } from './layout/main-layout/main-layout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'esdras-khan-root',
+  selector: 'ef-root',
   standalone: true,
-  imports: [MainLayoutComponent],
+  imports: [FormsModule, ReactiveFormsModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

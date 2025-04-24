@@ -23,7 +23,7 @@
       },
       "root": "projects/frontend-school",
       "sourceRoot": "projects/frontend-school/src",
-      "prefix": "esdras-khan",
+      "prefix": "ef",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
