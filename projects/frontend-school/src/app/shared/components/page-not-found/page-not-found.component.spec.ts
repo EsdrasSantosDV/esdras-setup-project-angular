@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ExercicioNineComponent } from './exercicio-nine.component';
+import { PageNotFoundComponent } from './page-not-found.component';
 
-describe('ExercicioNineComponent', () => {
-  let component: ExercicioNineComponent;
-  let fixture: ComponentFixture<ExercicioNineComponent>;
+describe('PageNotFoundComponent', () => {
+  let component: PageNotFoundComponent;
+  let fixture: ComponentFixture<PageNotFoundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ExercicioNineComponent],
+      imports: [PageNotFoundComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(ExercicioNineComponent);
+    fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

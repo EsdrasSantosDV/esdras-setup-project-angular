@@ -1,0 +1,868 @@
+<mat-tab-group>
+  <mat-tab label="Exercício 1: Fundamentos RxJS">
+    <div class="exercise-description">
+      <h2>Exercício 1 - Fundamentos RxJS Assinatura de um Observable</h2>
+
+      <p>Faça uma fonte emite um valor a cada 1 segundo.</p>
+      <p>
+        <esdras-khan-exercicio-one></esdras-khan-exercicio-one>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 2: Operadores">
+    <div class="exercise-description">
+      <h2>Exercício 2 - Operadores Comuns</h2>
+      <p>
+        Faça uma fonte observable que emite os numeros de 1 a 10 e transforme essa fonte, para que exista uma nova fonte
+        que emite o quadrado de cada numero.
+      </p>
+      <p>
+        <esdras-khan-exercicio-two></esdras-khan-exercicio-two>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 3:Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 3 - Operadores Comuns</h2>
+      <p>Faça uma fonte observable que gere valores ao longo do tempo, e filtre os valores pares dessa fonte.</p>
+      <p>
+        <esdras-khan-exercicio-three></esdras-khan-exercicio-three>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 4: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 4 - Operadores Comuns</h2>
+      <p>
+        Faça uma fonte observable que emite valores ao longo do tempo a cada 1 segundo e quando essa fonte emitir o
+        valor 35, faça um console log.
+      </p>
+      <p>
+        <esdras-khan-exercicio-four></esdras-khan-exercicio-four>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 5: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 5 - Operadores Comuns</h2>
+      <p>Crie uma fonte de números de 1 a 10 e aplique um delay de 1 segundo entre cada emissão.</p>
+      <p>
+        <esdras-khan-exercicio-five></esdras-khan-exercicio-five>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 6: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 6 - Operadores Comuns</h2>
+      <p>Crie uma fonte de números de 1 a 10 e ignore os 3 primeiros valores.</p>
+      <p>
+        <esdras-khan-exercicio-six></esdras-khan-exercicio-six>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 7: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 7 - Operadores Comuns</h2>
+      <p>Crie uma fonte que emite valores a cada segundo e pare a emissão após os 5 primeiros valores.</p>
+      <p>
+        <esdras-khan-exercicio-seven></esdras-khan-exercicio-seven>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 8: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 8 - Operadores Comuns</h2>
+      <p>Crie uma fonte de números de 1 a 10 e capture apenas o primeiro número que seja maior que 5.</p>
+      <p>
+        <esdras-khan-exercicio-eight></esdras-khan-exercicio-eight>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 9: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 9 - Operadores Comuns</h2>
+      <p>Simule um campo de busca que começa com um valor padrão e emite os novos valores digitados.</p>
+      <p>
+        <esdras-khan-exercicio-nine></esdras-khan-exercicio-nine>
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 10: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 10 - Operadores Comuns</h2>
+      <p>Crie uma fonte de nomes digitados por um usuário. Só emita um novo valor se ele for diferente do anterior.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 10: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 10 - Operadores Comuns</h2>
+      <p>Crie uma fonte de nomes digitados por um usuário. Só emita um novo valor se ele for diferente do anterior.</p>
+      <p></p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 11: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 11 - Operadores Comuns</h2>
+      <p>
+        Use um campo de busca ou um botão com `fromEvent`, e teste tanto `debounceTime` quanto `throttleTime`. Qual
+        operador seria melhor em qual situação?
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 12: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 12 - Operadores Comuns</h2>
+      <p>Crie um botão que, ao ser clicado, pegue o valor mais recente de um campo de texto e mostre no console.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 13: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 13 - Operadores Comuns</h2>
+      <p>Crie uma fonte que emite cliques de botão, e cada clique deve somar +1 a um contador acumulado.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 14: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 14 - Operadores Comuns</h2>
+      <p>
+        Crie dois campos: um de nome e outro de idade. Quando ambos forem preenchidos, exiba uma mensagem como "Olá,
+        [nome]! Você tem [idade] anos".
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 15: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 15 - Operadores Comuns</h2>
+      <p>
+        Use um campo de busca ou um botão com `fromEvent`, e teste tanto `debounceTime` quanto `throttleTime`. Qual
+        operador seria melhor em qual situação?
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 16: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 16 - Operadores Comuns</h2>
+      <p>
+        Simule cliques em um botão que dispara uma requisição (pode ser uma `of(...).pipe(delay(...))`). Permita
+        múltiplos cliques e trate cada requisição individualmente.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 17: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 17 - Operadores Comuns</h2>
+      <p>
+        Faça com que cliques em um botão disparem requisições simuladas, mas cada nova requisição só deve começar depois
+        que a anterior for concluída.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 18: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 18 - Operadores Comuns</h2>
+      <p>
+        Simule um campo de busca: enquanto o usuário digita, uma requisição é feita. Apenas a última busca deve ser
+        válida. As anteriores devem ser canceladas.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 19: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 19 - Operadores Comuns</h2>
+      <p>
+        Simule um botão "Entrar" em um sistema. Se o usuário clicar várias vezes seguidas, só a primeira requisição deve
+        ser executada. As demais devem ser ignoradas até que a primeira termine.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 20: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 20 - Operadores Comuns</h2>
+      <p>
+        Simule um campo de busca: enquanto o usuário digita, uma requisição é feita. Apenas a última busca deve ser
+        válida. As anteriores devem ser canceladas.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 20: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 20 - Combinação de operadores simples</h2>
+      <p>
+        Crie uma fonte que emite os valores 1, 2, 3, 4 e 5. Aplique uma transformação que multiplica os números por 10 e
+        filtre para mostrar apenas os que forem maiores que 20.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 21: Intervalo controlado">
+    <div class="exercise-description">
+      <h2>Exercício 21 - Contagem até 10</h2>
+      <p>
+        Crie um contador que emite um valor a cada segundo até chegar em 10, e exibe cada número como "Contando: X".
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 22: Input reativo com debounce">
+    <div class="exercise-description">
+      <h2>Exercício 22 - Campo de busca com atraso</h2>
+      <p>Crie um campo de texto que emite os valores digitados, mas apenas após 400ms sem digitar (debounce).</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 23: Troca de fontes com tempo">
+    <div class="exercise-description">
+      <h2>Exercício 23 - Troca automática de fonte</h2>
+      <p>
+        A cada 5 segundos, crie uma nova fonte que começa a emitir valores a cada segundo. Apenas a mais recente deve
+        emitir.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 24: Fusão e filtragem de eventos">
+    <div class="exercise-description">
+      <h2>Exercício 24 - Clique vs Tecla</h2>
+      <p>
+        Una dois eventos: clique de botão e tecla pressionada. Filtre para aceitar apenas letras ou clique com Shift
+        pressionado. Exiba qual foi o tipo de evento.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 25: Cálculo com múltiplas fontes">
+    <div class="exercise-description">
+      <h2>Exercício 25 - Soma de dois inputs</h2>
+      <p>Crie dois inputs numéricos e exiba em tempo real a soma entre eles usando RxJS.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 26: Acúmulo com valor inicial">
+    <div class="exercise-description">
+      <h2>Exercício 26 - Contador com valor inicial</h2>
+      <p>Crie um botão que soma +2 a cada clique, começando de 10. Exiba o valor atual a cada clique.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 27: Requisição com cancelamento">
+    <div class="exercise-description">
+      <h2>Exercício 27 - Cancelar carregamento ao clicar novamente</h2>
+      <p>
+        Crie um botão que simula uma requisição com atraso (timer). Se o botão for clicado de novo antes de terminar, a
+        requisição anterior deve ser cancelada.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 28: Filtro com limite de tempo">
+    <div class="exercise-description">
+      <h2>Exercício 28 - Mostrar números pares de 1 a 20</h2>
+      <p>Crie um fluxo que emite de 1 a 20 ao longo do tempo, filtrando apenas os pares e exibindo em tela.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 29: Tratamento de erro">
+    <div class="exercise-description">
+      <h2>Exercício 29 - Simulação de falha</h2>
+      <p>
+        Simule uma requisição que falha aleatoriamente (ex: 50% das vezes). Quando falhar, exiba uma mensagem de erro.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 30: Controle de frequência">
+    <div class="exercise-description">
+      <h2>Exercício 30 - Botão que ignora cliques rápidos</h2>
+      <p>Crie um botão que só deve ser considerado se o clique ocorrer com um intervalo de 2 segundos entre si.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 20: Operadores Comuns">
+    <div class="exercise-description">
+      <h2>Exercício 20 - Combinação de operadores simples</h2>
+      <p>
+        Crie uma fonte que emite os valores 1, 2, 3, 4 e 5. Aplique uma transformação que multiplica os números por 10 e
+        filtre para mostrar apenas os que forem maiores que 20.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 21: Intervalo controlado">
+    <div class="exercise-description">
+      <h2>Exercício 21 - Contagem até 10</h2>
+      <p>
+        Crie um contador que emite um valor a cada segundo até chegar em 10, e exibe cada número como "Contando: X".
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 22: Input reativo com debounce">
+    <div class="exercise-description">
+      <h2>Exercício 22 - Campo de busca com atraso</h2>
+      <p>Crie um campo de texto que emite os valores digitados, mas apenas após 400ms sem digitar (debounce).</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 23: Troca de fontes com tempo">
+    <div class="exercise-description">
+      <h2>Exercício 23 - Troca automática de fonte</h2>
+      <p>
+        A cada 5 segundos, crie uma nova fonte que começa a emitir valores a cada segundo. Apenas a mais recente deve
+        emitir.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 24: Fusão e filtragem de eventos">
+    <div class="exercise-description">
+      <h2>Exercício 24 - Clique vs Tecla</h2>
+      <p>
+        Una dois eventos: clique de botão e tecla pressionada. Filtre para aceitar apenas letras ou clique com Shift
+        pressionado. Exiba qual foi o tipo de evento.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 25: Cálculo com múltiplas fontes">
+    <div class="exercise-description">
+      <h2>Exercício 25 - Soma de dois inputs</h2>
+      <p>Crie dois inputs numéricos e exiba em tempo real a soma entre eles usando RxJS.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 26: Acúmulo com valor inicial">
+    <div class="exercise-description">
+      <h2>Exercício 26 - Contador com valor inicial</h2>
+      <p>Crie um botão que soma +2 a cada clique, começando de 10. Exiba o valor atual a cada clique.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 27: Requisição com cancelamento">
+    <div class="exercise-description">
+      <h2>Exercício 27 - Cancelar carregamento ao clicar novamente</h2>
+      <p>
+        Crie um botão que simula uma requisição com atraso (timer). Se o botão for clicado de novo antes de terminar, a
+        requisição anterior deve ser cancelada.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 28: Filtro com limite de tempo">
+    <div class="exercise-description">
+      <h2>Exercício 28 - Mostrar números pares de 1 a 20</h2>
+      <p>Crie um fluxo que emite de 1 a 20 ao longo do tempo, filtrando apenas os pares e exibindo em tela.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 29: Tratamento de erro">
+    <div class="exercise-description">
+      <h2>Exercício 29 - Simulação de falha</h2>
+      <p>
+        Simule uma requisição que falha aleatoriamente (ex: 50% das vezes). Quando falhar, exiba uma mensagem de erro.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 30: Controle de frequência">
+    <div class="exercise-description">
+      <h2>Exercício 30 - Botão que ignora cliques rápidos</h2>
+      <p>Crie um botão que só deve ser considerado se o clique ocorrer com um intervalo de 2 segundos entre si.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 31: Acúmulo de valores ao longo do tempo">
+    <div class="exercise-description">
+      <h2>Exercício 31 - Soma incremental</h2>
+      <p>
+        Crie um fluxo que emite números de 1 a 5 a cada segundo, e acumule a soma dos valores emitidos em tempo real.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 32: Throttle em eventos de clique">
+    <div class="exercise-description">
+      <h2>Exercício 32 - Controle de spam de cliques</h2>
+      <p>
+        Implemente um botão que só aceita um clique a cada 3 segundos. Demais cliques nesse período devem ser ignorados.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 33: Remover valores repetidos">
+    <div class="exercise-description">
+      <h2>Exercício 33 - Valores únicos consecutivos</h2>
+      <p>
+        Dada uma sequência com valores repetidos consecutivamente, emita apenas quando o valor mudar em relação ao
+        anterior.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 34: Agrupar valores em um array">
+    <div class="exercise-description">
+      <h2>Exercício 34 - Coletar valores em lista</h2>
+      <p>Emita os números de 1 a 5 e ao final da emissão, exiba todos os valores agrupados em um array.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 35: Combinação com valor inicial">
+    <div class="exercise-description">
+      <h2>Exercício 35 - Cálculo com valor inicial</h2>
+      <p>Combine dois inputs e exiba o resultado da multiplicação entre eles. Ambos devem começar com o valor 1.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 36: Tentativas e erro">
+    <div class="exercise-description">
+      <h2>Exercício 36 - Repetir requisição falha</h2>
+      <p>Simule uma requisição que pode falhar. Tente automaticamente até 3 vezes antes de exibir um erro final.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 37: Combinar com último valor de outra fonte">
+    <div class="exercise-description">
+      <h2>Exercício 37 - Usar o valor mais recente de outra fonte</h2>
+      <p>Ao clicar em um botão, capture o valor mais recente de um input de texto e exiba a combinação.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 38: Compartilhamento de execução">
+    <div class="exercise-description">
+      <h2>Exercício 38 - Evitar execução duplicada</h2>
+      <p>
+        Crie uma fonte com delay que simula uma requisição. Use dois subscribers, mas garanta que a requisição seja
+        executada apenas uma vez.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 39: Reutilização de valores emitidos">
+    <div class="exercise-description">
+      <h2>Exercício 39 - Cache de resposta</h2>
+      <p>
+        Simule uma requisição com `of(...).pipe(delay(...))` e compartilhe seu resultado com múltiplos observadores, sem
+        disparar novamente.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 40: Competição entre fontes">
+    <div class="exercise-description">
+      <h2>Exercício 40 - A primeira resposta vence</h2>
+      <p>
+        Crie duas fontes com delays diferentes. Apenas a que responder primeiro deve ser considerada, e as demais
+        descartadas.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 41: Busca com tratamento de erro">
+    <div class="exercise-description">
+      <h2>Exercício 41 - Campo de busca com fallback</h2>
+      <p>
+        Implemente um campo de busca que emite os caracteres digitados com `debounceTime`. Realize uma busca simulada
+        via `switchMap`, e em caso de falha, mostre uma mensagem de erro substituindo os dados com `of(...)`.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 42: Contador com status final">
+    <div class="exercise-description">
+      <h2>Exercício 42 - Contador com status ao final</h2>
+      <p>
+        Crie um contador que emite de 1 a 10 a cada segundo, somando os valores filtrados (apenas ímpares). Ao final,
+        exiba um log de finalização no console.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 43: Temporizador controlável">
+    <div class="exercise-description">
+      <h2>Exercício 43 - Início e parada de temporizador</h2>
+      <p>
+        Crie dois botões: um para iniciar e outro para parar uma contagem. O valor deve ser exibido a cada segundo. Use
+        `takeUntil` e `merge` para controlar o fluxo.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 44: Soma reativa de múltiplos inputs">
+    <div class="exercise-description">
+      <h2>Exercício 44 - Soma dinâmica de inputs numéricos</h2>
+      <p>
+        Combine três inputs numéricos. Sempre que algum deles mudar (com throttle de 300ms), atualize a soma, mas apenas
+        se a soma for um valor par e diferente da anterior.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 45: Agrupar cliques em intervalos">
+    <div class="exercise-description">
+      <h2>Exercício 45 - Detecção de múltiplos cliques</h2>
+      <p>
+        Detecte se o botão foi clicado 3 vezes ou mais dentro de 1 segundo. Caso isso ocorra, exiba uma mensagem
+        especial.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 46: Requisição com fallback e tentativa">
+    <div class="exercise-description">
+      <h2>Exercício 46 - Requisição resiliente</h2>
+      <p>
+        Simule uma requisição que pode falhar. Tente novamente até 2 vezes antes de exibir um fallback fixo. Mostre um
+        loading inicial e mensagens de log durante todo o fluxo.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 47: Acumulador com fator variável">
+    <div class="exercise-description">
+      <h2>Exercício 47 - Multiplicador dinâmico</h2>
+      <p>
+        Crie um número que se atualiza a cada segundo e outro input onde o usuário define um multiplicador. Use
+        `withLatestFrom` para atualizar a multiplicação acumulada e mostrar o progresso em tempo real.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 48: Evitar duplo envio">
+    <div class="exercise-description">
+      <h2>Exercício 48 - Clique seguro</h2>
+      <p>
+        Simule um botão que envia uma requisição. Enquanto a requisição estiver em andamento, cliques adicionais devem
+        ser ignorados.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 49: Emissão em grupos de 3">
+    <div class="exercise-description">
+      <h2>Exercício 49 - Processamento em lotes</h2>
+      <p>
+        Emita valores de 1 a 9 a cada 300ms e agrupe-os em trios. Para cada grupo, calcule a soma e exiba o progresso da
+        operação.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 50: Primeira resposta válida">
+    <div class="exercise-description">
+      <h2>Exercício 50 - Corrida de fontes com fallback</h2>
+      <p>
+        Simule 3 fontes de dados que retornam com delays diferentes. A primeira a retornar um valor deve vencer. Caso
+        todas falhem, um valor padrão deve ser emitido.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 51: Requisição com tentativa programada">
+    <div class="exercise-description">
+      <h2>Exercício 51 - Retry com atraso</h2>
+      <p>
+        Simule uma requisição que falha. Tente novamente a cada 2 segundos, no máximo 3 vezes. Ao final, exiba uma
+        mensagem de erro caso todas as tentativas falhem.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 52: Média de lotes enquanto válida">
+    <div class="exercise-description">
+      <h2>Exercício 52 - Análise de lotes</h2>
+      <p>
+        Emita números de 1 a 100 e agrupe em lotes de 5. Calcule a média de cada lote e pare o fluxo quando um lote
+        tiver média menor que 10.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 53: Detectar alteração significativa">
+    <div class="exercise-description">
+      <h2>Exercício 53 - Diferença entre valores</h2>
+      <p>Em um input numérico, detecte quando a diferença entre dois valores consecutivos for maior que 20.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 54: Envio único com cache">
+    <div class="exercise-description">
+      <h2>Exercício 54 - Enviar uma vez e reutilizar resultado</h2>
+      <p>
+        Simule uma ação que só pode ser executada uma vez por sessão (ex: "validar cupom") e compartilhe a resposta
+        entre múltiplos observers.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 55: Validação de múltiplos campos">
+    <div class="exercise-description">
+      <h2>Exercício 55 - Validação de múltiplos campos</h2>
+      <p>
+        Crie três campos de input. Quando todos estiverem preenchidos e mudarem, exiba uma mensagem de "formulário
+        válido" com debounce.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 56: Batch por tempo com encerramento">
+    <div class="exercise-description">
+      <h2>Exercício 56 - Processar pacotes por tempo</h2>
+      <p>
+        Emita valores de 1 a 30, agrupando-os a cada 3 segundos. Quando atingir 30, pare o fluxo e mostre todos os
+        grupos processados.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 57: Fluxo que simula falhas intercaladas">
+    <div class="exercise-description">
+      <h2>Exercício 57 - Intermitência com resiliência</h2>
+      <p>
+        Crie uma fonte que emite valores e ocasionalmente lança erro. Retente automaticamente até que um total de 10
+        valores sejam emitidos com sucesso.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 58: Simulação de fila de pedidos">
+    <div class="exercise-description">
+      <h2>Exercício 58 - Processar itens com atraso variável</h2>
+      <p>
+        Emita 5 pedidos e processe cada um com um tempo de resposta diferente. Mostre quando cada pedido começa e
+        termina.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 59: Observando campos específicos">
+    <div class="exercise-description">
+      <h2>Exercício 59 - Monitorar alterações em uma propriedade</h2>
+      <p>
+        Dado um formulário com vários campos, monitore apenas mudanças na propriedade "email", com debounce e sem
+        repetições consecutivas.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 60: Emissão ordenada com soma progressiva">
+    <div class="exercise-description">
+      <h2>Exercício 60 - Soma em sequência com atraso</h2>
+      <p>Emita os valores de 1 a 10 com atraso entre eles e acumule uma soma progressiva, exibindo cada etapa.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 61: Operadores concorrentes com cancelamento">
+    <div class="exercise-description">
+      <h2>Exercício 61 - Corrida de tarefas com cancelamento</h2>
+      <p>
+        Simule 3 tarefas assíncronas com tempos variados. Quando uma for iniciada, as outras devem ser canceladas
+        automaticamente.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 62: Temporizador de atividade">
+    <div class="exercise-description">
+      <h2>Exercício 62 - Inatividade detectada</h2>
+      <p>
+        Detecte se o usuário ficou 10 segundos sem interagir com a página (teclado, mouse, clique). Use `fromEvent`,
+        `merge`, `debounceTime`, `timer`, `switchMap` e exiba uma mensagem de "você está aí?".
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 63: Reset de contagem com clique">
+    <div class="exercise-description">
+      <h2>Exercício 63 - Reiniciar contador com evento</h2>
+      <p>
+        Crie um contador que reinicia toda vez que um botão é clicado. Mostre o tempo desde o último clique em tempo
+        real.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 64: Verificação com múltiplos critérios">
+    <div class="exercise-description">
+      <h2>Exercício 64 - Validar campos de forma conjunta</h2>
+      <p>
+        Combine 3 campos com `combineLatest`, e valide que o primeiro seja um número par, o segundo uma string com mais
+        de 3 letras e o terceiro um booleano true. Apenas exiba "válido" se todos os critérios forem satisfeitos.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 65: Janela de valores por tempo">
+    <div class="exercise-description">
+      <h2>Exercício 65 - Agrupamento temporal com janela</h2>
+      <p>Emita valores de 1 a 20 e agrupe em janelas de 2 segundos. Exiba os valores dentro de cada janela.</p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 66: Controle de concorrência com switchMap">
+    <div class="exercise-description">
+      <h2>Exercício 66 - Consulta ao digitar</h2>
+      <p>
+        Crie um campo de texto que dispara uma consulta simulada a cada digitação, mas apenas o resultado mais recente
+        deve ser considerado.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 67: Uso de auditTime em interações">
+    <div class="exercise-description">
+      <h2>Exercício 67 - Considerar o último clique em intervalo</h2>
+      <p>
+        Capture os cliques do usuário e use `auditTime(2000)` para mostrar apenas o último clique de cada janela de 2
+        segundos.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 68: Multicasting com refCount">
+    <div class="exercise-description">
+      <h2>Exercício 68 - Compartilhamento automático</h2>
+      <p>
+        Crie uma fonte que só começa a emitir quando alguém se inscreve e para automaticamente quando todos se
+        desinscrevem.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 69: Buffer com clique e tempo">
+    <div class="exercise-description">
+      <h2>Exercício 69 - Agrupar ações por tempo e clique</h2>
+      <p>
+        Agrupe cliques em um botão, mas os envie apenas quando passar 3 segundos ou quando um botão de envio for
+        pressionado.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 70: Operador customizado via função pura">
+    <div class="exercise-description">
+      <h2>Exercício 70 - Criar operador que multiplica e loga</h2>
+      <p>
+        Crie um operador customizado chamado `multiplyAndLog(factor: number)` que multiplica os valores e loga o
+        resultado antes de emitir.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 71: Streams paralelos com mergeAll">
+    <div class="exercise-description">
+      <h2>Exercício 71 - Múltiplas tarefas em paralelo</h2>
+      <p>
+        A cada clique, dispare uma tarefa assíncrona (simulada com `of().pipe(delay(...))`). Use `map` para criar
+        observables internos e `mergeAll` para executá-los paralelamente.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 72: Debounce condicional">
+    <div class="exercise-description">
+      <h2>Exercício 72 - Tempo de espera baseado no tamanho da entrada</h2>
+      <p>
+        Quanto maior o texto digitado, menor o `debounceTime`. Ex: até 5 letras = 1s, 6 a 10 = 500ms, mais de 10 =
+        200ms.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 73: Combine + delayWhen + switchMap">
+    <div class="exercise-description">
+      <h2>Exercício 73 - Consulta com delay dinâmico</h2>
+      <p>
+        Combine um campo de busca com um seletor de delay (ex: "rápido", "médio", "lento"). Cada consulta respeita o
+        delay configurado antes de ser feita.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 74: Controle de sessão por inatividade">
+    <div class="exercise-description">
+      <h2>Exercício 74 - Logout automático</h2>
+      <p>
+        Se o usuário ficar 2 minutos sem interagir com a tela (clique, keypress), uma função de logout deve ser
+        executada.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 75: Operadores condicionais com if-else">
+    <div class="exercise-description">
+      <h2>Exercício 75 - Comportamento baseado em valor</h2>
+      <p>
+        Em um fluxo de números, se o valor for par, use `delay`, se for ímpar, use `map`. Teste ambos com `mergeMap` e
+        `iif`.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 76: retryWhen com notificações customizadas">
+    <div class="exercise-description">
+      <h2>Exercício 76 - Nova tentativa após clique</h2>
+      <p>
+        Simule uma falha de requisição. Exiba um botão "Tentar novamente" e só reexecute quando o botão for clicado.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 77: Janelas móveis com windowCount">
+    <div class="exercise-description">
+      <h2>Exercício 77 - Analisar sequência com janela deslizante</h2>
+      <p>
+        Emita números de 1 a 20 e use `windowCount(5, 1)` para criar janelas móveis. Calcule a média de cada janela e
+        exiba.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 78: Watchers de múltiplos campos">
+    <div class="exercise-description">
+      <h2>Exercício 78 - Monitoramento dinâmico de campos</h2>
+      <p>
+        Observe 3 campos de um formulário. Exiba uma mensagem sempre que qualquer campo mudar, mas apenas se o valor
+        mudar de fato.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 79: Expand para processamento recursivo">
+    <div class="exercise-description">
+      <h2>Exercício 79 - Processo recursivo controlado</h2>
+      <p>
+        Comece com o valor 1 e gere novos valores a partir dele (ex: `x => x * 2`) usando `expand`, até ultrapassar 100.
+      </p>
+    </div>
+  </mat-tab>
+
+  <mat-tab label="Exercício 80: concat com cancelamento usando race">
+    <div class="exercise-description">
+      <h2>Exercício 80 - Processo cancelável</h2>
+      <p>
+        Inicie uma tarefa que emite 3 valores com atraso. Use `race` com um botão de cancelamento que interrompe o fluxo
+        se for clicado antes de completar.
+      </p>
+    </div>
+  </mat-tab>
+</mat-tab-group>
