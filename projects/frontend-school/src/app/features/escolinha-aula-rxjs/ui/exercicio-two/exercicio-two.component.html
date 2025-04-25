@@ -1,1 +1,19 @@
-<p>exercicio-two works!</p>
+<div class="form-container">
+  <h2>Formulário com FormControl</h2>
+  <form>
+    <div class="form-group">
+      <label for="textInput">Digite um texto:</label>
+      <input 
+        id="textInput"
+        type="text" 
+        [formControl]="textControl" 
+        placeholder="Digite algo aqui"
+        class="form-control"
+      >
+    </div>
+    
+    <div class="form-feedback" *ngIf="textControl.value">
+      <p>Texto digitado em tempo real: <strong>{{ textControl.value }}</strong></p>
+    </div>
+  </form>
+</div>
