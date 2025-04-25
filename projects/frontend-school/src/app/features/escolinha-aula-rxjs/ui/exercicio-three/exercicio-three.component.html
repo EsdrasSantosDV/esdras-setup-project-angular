@@ -1,1 +1,9 @@
-<p>exercicio-three works!</p>
+{{form.value | json}}
+
+<form #form="ngForm">
+  <input name="login" [(ngModel)]="string" placeholder="Login">
+</form>
+
+<form [formGroup]="reactiveForm">
+  <input formControlName="name" placeholder="Login">
+</form>
