@@ -1,11 +1,15 @@
+import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { interval, takeWhile } from 'rxjs';
 
 @Component({
   selector: 'esdras-khan-exercicio-eight',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './exercicio-eight.component.html',
   styleUrl: './exercicio-eight.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExercicioEightComponent {}
+export class ExercicioEightComponent {
+  fonte$ = interval(1000).pipe(takeWhile((value) => value < 5));
+}
