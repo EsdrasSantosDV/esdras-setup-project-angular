@@ -35,8 +35,8 @@ import { ExerciseFifteenComponent } from '../../ui/exercise-fifteen/exercise-fif
     ExerciseFourteenComponent,
     ExerciseFifteenComponent,
     ExerciseTwelveComponent,
-    ExerciseElevenComponent
-],
+    ExerciseElevenComponent,
+  ],
   templateUrl: './exercises-rxjs.component.html',
   styleUrl: './exercises-rxjs.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
