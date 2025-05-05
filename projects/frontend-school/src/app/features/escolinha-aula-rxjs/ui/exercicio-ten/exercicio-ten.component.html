@@ -1,1 +1,7 @@
-<p>exercicio-ten works!</p>
+<p>Exemplo com debounce e throttle</p>
+
+<p class="bg-gray-300 w-2/4 p-3 mt-4 rounded">Resultado Debounce: {{ debounce$ | async }}</p>
+<button class="bg-gray-900 px-4 py-2 text-white rounded" type="button" #debounceButton>Debounce Button</button>
+
+<p class="bg-gray-300 w-2/4 p-3 mt-4 rounded">Resultado Throttle: {{ throttle$ | async }}</p>
+<button class="bg-gray-900 px-4 py-2 text-white rounded" type="button" #throttleButton>Throttle Button</button>
