@@ -1,16 +1,25 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AsyncPipe, CommonModule } from '@angular/common';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
-import { Observable } from 'rxjs';
+import { Observable, tap } from 'rxjs';
 
 @Component({
   selector: 'esdras-khan-exercicio-two',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, AsyncPipe],
   templateUrl: './exercicio-two.component.html',
   styleUrl: './exercicio-two.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
+
+/*
+  Explicação, criei um formControl, me inscrevi no seu valueChanges e dou um console.log
+  quando o valor mudar, no ngOnDestroy cancelo a subscrição.
+  Além disso, também estou mostrando o valor do formControl no template.
+*/
 export class ExercicioTwoComponent {
-  textControl = new FormControl('');
+  textControl = new FormControl();
+  valueChange$: Observable<string> = this.textControl.valueChanges.pipe(
+    tap((value) => console.log('Ex02 - Valor do formControl:', value)),
+  );
 }

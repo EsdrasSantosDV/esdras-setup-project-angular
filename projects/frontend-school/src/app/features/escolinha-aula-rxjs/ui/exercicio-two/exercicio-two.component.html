@@ -1,19 +1,15 @@
 <div class="form-container">
   <h2>Formulário com FormControl</h2>
-  <form>
-    <div class="form-group">
-      <label for="textInput">Digite um texto:</label>
-      <input 
-        id="textInput"
-        type="text" 
-        [formControl]="textControl" 
-        placeholder="Digite algo aqui"
-        class="form-control"
-      >
-    </div>
-    
-    <div class="form-feedback" *ngIf="textControl.value">
-      <p>Texto digitado em tempo real: <strong>{{ textControl.value }}</strong></p>
-    </div>
+  <form class="bg-gray-300 w-2/4 p-3 rounded">
+    <input
+      id="textInput"
+      type="text"
+      [formControl]="textControl"
+      placeholder="Digite algo aqui"
+      class="rounded p-2 w-2/4"
+    />
   </form>
+  <p class="bg-gray-300 w-2/4 p-3 mt-4 rounded" *ngIf="textControl.value">
+    Texto digitado em tempo real: <strong>{{ valueChange$ | async }}</strong>
+  </p>
 </div>
