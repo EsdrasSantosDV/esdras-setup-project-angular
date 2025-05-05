@@ -1,9 +1,2 @@
-{{form.value | json}}
-
-<form #form="ngForm">
-  <input name="login" [(ngModel)]="string" placeholder="Login">
-</form>
-
-<form [formGroup]="reactiveForm">
-  <input formControlName="name" placeholder="Login">
-</form>
+<p class="bg-gray-300 w-2/4 p-3 rounded">Resultado da multiplicação: {{ squareOfNumbers$ | async }}</p>
+<button class="bg-gray-900 px-4 py-2 text-white rounded" (click)="reset()" type="button">Resetar</button>

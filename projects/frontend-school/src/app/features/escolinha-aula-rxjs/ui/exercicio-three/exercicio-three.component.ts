@@ -1,36 +1,57 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, inject, OnInit, signal } from '@angular/core';
-import { interval, map, range, take, tap } from 'rxjs';
-import { AsyncPipe, JsonPipe } from '@angular/common';
-import { FormBuilder, FormsModule } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { interval, map, Observable, Subject, Subscription, switchMap, take } from 'rxjs';
 
 @Component({
   selector: 'esdras-khan-exercicio-three',
   standalone: true,
-  imports: [AsyncPipe, JsonPipe, FormsModule, ReactiveFormsModule],
+  imports: [AsyncPipe, FormsModule, ReactiveFormsModule],
   templateUrl: './exercicio-three.component.html',
   styleUrl: './exercicio-three.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExercicioThreeComponent implements OnInit {
-  fb = inject(FormBuilder);
 
-  string: string = 'Maria';
+/*
+  Explicação: Criei um observable chamado squareOfNumbers e um subject chamado reset
+  
+  Na Inicialização do componente, o squareOfNumbers recebe um observable que vem do reset com um swtichMap
+  que tem um interval dentro dele, isso significa que quando o reset emitir um valor, o switchMap vai sobrepor
+  o interval por um novo, fazendo com que squareOfNumbers seja sobreposto com um novo observable.
 
-  interval$ = interval(1000).pipe(take(10));
-  printedValue$ = this.interval$.pipe(
-    map((value) => value * 2),
-    tap((value) => {
-      this.string += String(value);
-      this.reactiveForm.controls['name'].setValue(this.string);
-    }),
-  );
+  No interval, multiplico o valor por 2 com map e uso o take(10) para limitar a 10 valores.
 
-  reactiveForm = this.fb.group({
-    name: [''],
-  });
+  O metodo reset emite um valor para reset, ativando o switchMap
+
+  O ngOnDestroy é utilizado para cancelar a subscrição no squareOfNumbers, evitando vazamentos de memória.
+*/
+export class ExercicioThreeComponent implements OnInit, OnDestroy {
+  squareOfNumbers$!: Observable<number>;
+  private subscription!: Subscription;
+  reset$ = new Subject<void>();
 
   ngOnInit(): void {
-    this.printedValue$.subscribe();
+    this.squareOfNumbers$ = this.reset$.pipe(
+      switchMap(() =>
+        interval(1000).pipe(
+          map((value) => value * 2),
+          take(10),
+        ),
+      ),
+    );
+    this.subscription = this.squareOfNumbers$.subscribe();
+    setTimeout(() => {
+      this.reset$.next();
+    });
+  }
+
+  reset(): void {
+    this.reset$.next();
+  }
+
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
   }
 }

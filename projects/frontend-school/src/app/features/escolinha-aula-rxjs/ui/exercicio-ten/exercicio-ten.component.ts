@@ -1,11 +1,63 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  OnDestroy,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
+import { BehaviorSubject, debounceTime, fromEvent, map, Observable, Subscription, tap, throttleTime } from 'rxjs';
 
 @Component({
   selector: 'esdras-khan-exercicio-ten',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './exercicio-ten.component.html',
-  styleUrl: './exercicio-ten.component.scss',
+  styleUrls: ['./exercicio-ten.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExercicioTenComponent {}
+
+/* 
+  Explicação: 
+  - O código utiliza RxJS para criar dois botões que demonstram o uso de debounce e throttle.
+
+  - O botão de debounce registra cliques com um atraso de 1 segundo, enquanto o botão de throttle registra cliques a cada 2 segundos.
+
+  - Tive que usar o ngAfterViewInit para garantir que os elementos do DOM estejam disponíveis antes de adicionar os ouvintes de eventos,
+  o NgOnInit ocorre antes disso, então não funcionaria.
+
+  - O AsyncPipe é usado para assinar os BehaviorSubjects e atualizar a interface do usuário com os cliques registrados.
+  
+  - O AsyncPipe não inscreve porque o ngAfterViewInit não renderiza o template novamente, usei o static para conseguir usar o ngoninit.
+  
+  - Usei constantes para armazenar as assinaturas e um Subscription para elas, depois desincrevo de tudo no NgOnDestroy.
+*/
+export class ExercicioTenComponent implements OnInit {
+  @ViewChild('debounceButton', { static: true }) debounceButton!: ElementRef;
+  @ViewChild('throttleButton', { static: true }) throttleButton!: ElementRef;
+
+  debounce$!: Observable<unknown>;
+  throttle$!: Observable<string>;
+
+  ngOnInit(): void {
+    console.log(this.debounceButton);
+    console.log(this.throttleButton);
+
+    this.debounce$ = fromEvent(this.debounceButton.nativeElement, 'click').pipe(
+      debounceTime(1000),
+      tap((value) => {
+        console.log('Ex10 - DebounceTime - clique registrado:', value);
+      }),
+    );
+
+    this.throttle$ = fromEvent(this.throttleButton.nativeElement, 'click').pipe(
+      map(() => 'Throttle button clicked'),
+      throttleTime(2000),
+      tap((value) => {
+        console.log('Ex10 - ThrottleTime - clique registrado:', value);
+      }),
+    );
+  }
+}
