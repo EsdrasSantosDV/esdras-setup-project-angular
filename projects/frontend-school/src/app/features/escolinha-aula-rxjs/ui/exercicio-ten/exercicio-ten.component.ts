@@ -39,7 +39,7 @@ export class ExercicioTenComponent implements OnInit {
   @ViewChild('throttleButton', { static: true }) throttleButton!: ElementRef;
 
   debounce$!: Observable<unknown>;
-  throttle$!: Observable<string>;
+  throttle$!: Observable<unknown>;
 
   ngOnInit(): void {
     console.log(this.debounceButton);
@@ -47,17 +47,12 @@ export class ExercicioTenComponent implements OnInit {
 
     this.debounce$ = fromEvent(this.debounceButton.nativeElement, 'click').pipe(
       debounceTime(1000),
-      tap((value) => {
-        console.log('Ex10 - DebounceTime - clique registrado:', value);
-      }),
+      tap(() => console.log('Ex10 - DebounceTime - clique registrado')),
     );
 
     this.throttle$ = fromEvent(this.throttleButton.nativeElement, 'click').pipe(
-      map(() => 'Throttle button clicked'),
       throttleTime(2000),
-      tap((value) => {
-        console.log('Ex10 - ThrottleTime - clique registrado:', value);
-      }),
+      tap(() => console.log('Ex10 - ThrottleTime - clique registrado')),
     );
   }
 }
