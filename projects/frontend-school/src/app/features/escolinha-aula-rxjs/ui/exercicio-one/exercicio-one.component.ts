@@ -1,6 +1,6 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { interval, Observable, Subject, Subscription, switchMap, take } from 'rxjs';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { interval, Observable, Subject, switchMap, take } from 'rxjs';
 
 @Component({
   selector: 'esdras-khan-exercicio-one',
@@ -19,17 +19,13 @@ import { interval, Observable, Subject, Subscription, switchMap, take } from 'rx
   o interval por um novo, fazendo com que secondCounter seja sobreposto com um novo observable.
 
   O metodo reset emite um valor para reset, ativando o switchMap
-
-  O ngOnDestroy é utilizado para cancelar a subscrição no secondCounter, evitando vazamentos de memória.
 */
-export class ExercicioOneComponent implements OnInit, OnDestroy {
+export class ExercicioOneComponent implements OnInit {
   secondCounter$!: Observable<number>;
   reset$ = new Subject<void>();
-  private subscription!: Subscription;
 
   ngOnInit(): void {
     this.secondCounter$ = this.reset$.pipe(switchMap(() => interval(1000).pipe(take(11))));
-    this.subscription = this.secondCounter$.subscribe();
     setTimeout(() => {
       this.reset$.next();
     });
@@ -37,11 +33,5 @@ export class ExercicioOneComponent implements OnInit, OnDestroy {
 
   reset(): void {
     this.reset$.next();
-  }
-
-  ngOnDestroy(): void {
-    if (this.subscription) {
-      this.subscription.unsubscribe();
-    }
   }
 }
