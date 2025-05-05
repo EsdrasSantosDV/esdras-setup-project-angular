@@ -1,1 +1,4 @@
 <p>exercicio-four works!</p>
+
+<p class="bg-gray-300 w-2/4 p-3 rounded">Valor Atual: {{ interval$ | async }}</p>
+<p class="bg-gray-300 w-2/4 p-3 rounded mt-4" *ngIf="valueAt35">O valor chegou em {{ valueAt35 }}</p>
