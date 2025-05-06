@@ -17,14 +17,18 @@
     <div class="exercise-description">
       <h2>Exercício 2 - Observando mudanças no formulário</h2>
 
-      <p>Um <span class="code">Observable</span> representa um valor ao longo do tempo. Um <span class="code">FormControl</span>
-        possui a propriedade <span class="code">valueChanges</span>, que é um Observable que emite os valores sempre que
-        o campo for alterado.</p>
+      <p>
+        Um <span class="code">Observable</span> representa um valor ao longo do tempo. Um
+        <span class="code">FormControl</span> possui a propriedade <span class="code">valueChanges</span>, que é um
+        Observable que emite os valores sempre que o campo for alterado.
+      </p>
 
       <strong>Objetivo:</strong>
 
-      <p>Declare um formulário com um <span class="code">FormControl</span> e se inscreva nas mudanças de valor usando o
-        <span class="code">valueChanges</span>. Exiba um log no console toda vez que o valor for atualizado.</p>
+      <p>
+        Declare um formulário com um <span class="code">FormControl</span> e se inscreva nas mudanças de valor usando o
+        <span class="code">valueChanges</span>. Exiba um log no console toda vez que o valor for atualizado.
+      </p>
 
       <div>
         <esdras-khan-exercicio-two></esdras-khan-exercicio-two>
@@ -32,13 +36,14 @@
 
       <strong>Pergunta:</strong>
 
-      <p>Sabemos que o <span class="code">FormControl.valueChanges</span> é uma stream que podemos observar com RxJS.
-        Por que não conseguimos usar esse tipo de abordagem quando trabalhamos com template-driven forms no Angular?</p>
+      <p>
+        Sabemos que o <span class="code">FormControl.valueChanges</span> é uma stream que podemos observar com RxJS. Por
+        que não conseguimos usar esse tipo de abordagem quando trabalhamos com template-driven forms no Angular?
+      </p>
 
       <p class="answer">✍️ Sua resposta:</p>
     </div>
   </mat-tab>
-
 
   <mat-tab label="Exercício 3: Operadores Comuns">
     <div class="exercise-description">
@@ -46,8 +51,10 @@
 
       <strong>Objetivo:</strong>
 
-      <p>Faça uma fonte <span class="code">Observable</span> que emite os números de 1 a 10 e transforme essa fonte,
-        para que exista uma nova fonte que emite o quadrado de cada número.</p>
+      <p>
+        Faça uma fonte <span class="code">Observable</span> que emite os números de 1 a 10 e transforme essa fonte, para
+        que exista uma nova fonte que emite o quadrado de cada número.
+      </p>
 
       <div>
         <esdras-khan-exercicio-three></esdras-khan-exercicio-three>
@@ -59,9 +66,10 @@
     <div class="exercise-description">
       <h2>Exercício 4 - Operadores Comuns</h2>
 
-      <p>Faça uma fonte <span class="code">Observable</span> que emite valores ao longo do tempo a cada 1 segundo e
-        quando essa fonte emitir o
-        valor 35, faça um <span class="code">console.log</span>.</p>
+      <p>
+        Faça uma fonte <span class="code">Observable</span> que emite valores ao longo do tempo a cada 1 segundo e
+        quando essa fonte emitir o valor 35, faça um <span class="code">console.log</span>.
+      </p>
 
       <p>
         <esdras-khan-exercicio-four></esdras-khan-exercicio-four>
@@ -69,18 +77,21 @@
     </div>
   </mat-tab>
 
-
   <mat-tab label="Exercício 5: Busca em Tempo Real e Performance">
     <div class="exercise-description">
       <h2>Exercício 5 - Busca em Tempo Real: Evitando Requisições Excessivas</h2>
 
-      <p>Em muitos sistemas, queremos acompanhar os valores digitados por um usuário, como em campos de busca. Porém,
-        realizar uma requisição a cada tecla digitada pode ser ineficiente e impactar a performance da aplicação.</p>
+      <p>
+        Em muitos sistemas, queremos acompanhar os valores digitados por um usuário, como em campos de busca. Porém,
+        realizar uma requisição a cada tecla digitada pode ser ineficiente e impactar a performance da aplicação.
+      </p>
 
       <strong>Objetivo:</strong>
 
-      <p>Implemente um campo de busca onde a requisição seja feita somente após o usuário parar de digitar por um
-        determinado período de tempo.</p>
+      <p>
+        Implemente um campo de busca onde a requisição seja feita somente após o usuário parar de digitar por um
+        determinado período de tempo.
+      </p>
 
       <div>
         <esdras-khan-exercicio-five></esdras-khan-exercicio-five>
@@ -92,13 +103,17 @@
     <div class="exercise-description">
       <h2>Exercício 6 - Emitindo Valores Diferentes</h2>
 
-      <p>Em cenários como campos de busca, é importante evitar realizar buscas repetidas para o mesmo valor. Queremos
-        emitir uma nova busca somente se o valor informado for diferente do anterior.</p>
+      <p>
+        Em cenários como campos de busca, é importante evitar realizar buscas repetidas para o mesmo valor. Queremos
+        emitir uma nova busca somente se o valor informado for diferente do anterior.
+      </p>
 
       <strong>Objetivo:</strong>
 
-      <p>Implemente um campo de formulário onde o valor digitado seja logado no <span class="code">console</span>
-        somente se for diferente do valor anterior.</p>
+      <p>
+        Implemente um campo de formulário onde o valor digitado seja logado no <span class="code">console</span> somente
+        se for diferente do valor anterior.
+      </p>
 
       <div>
         <esdras-khan-exercicio-six></esdras-khan-exercicio-six>
@@ -146,15 +161,19 @@
     <div class="exercise-description">
       <h2>Exercício 11 - Comparando o debounceTime e throttleTime</h2>
 
-      <p>Em campos de busca ou botões, é importante controlar a frequência com que as ações são executadas. O RxJS
-        oferece dois operadores populares para controlar a taxa de emissão de eventos: <span
-          class="code">debounceTime</span> e <span class="code">throttleTime</span>.</p>
+      <p>
+        Em campos de busca ou botões, é importante controlar a frequência com que as ações são executadas. O RxJS
+        oferece dois operadores populares para controlar a taxa de emissão de eventos:
+        <span class="code">debounceTime</span> e <span class="code">throttleTime</span>.
+      </p>
 
       <strong>Objetivo:</strong>
 
-      <p>Implemente um campo de busca ou um botão e use o operador <span class="code">fromEvent</span> para capturar os
-        eventos. Em seguida, teste ambos os operadores <span class="code">debounceTime</span> e <span class="code">throttleTime</span>
-        e observe como o comportamento de emissão de eventos muda com cada um.</p>
+      <p>
+        Implemente um campo de busca ou um botão e use o operador <span class="code">fromEvent</span> para capturar os
+        eventos. Em seguida, teste ambos os operadores <span class="code">debounceTime</span> e
+        <span class="code">throttleTime</span> e observe como o comportamento de emissão de eventos muda com cada um.
+      </p>
 
       <div>
         <esdras-khan-exercicio-ten></esdras-khan-exercicio-ten>
@@ -162,12 +181,12 @@
 
       <strong>Pergunta:</strong>
 
-      <p>Em que situações você usaria cada um desses operadores? Como eles afetam a performance e a experiência do
-        usuário?</p>
-
-      <p class="answer">
-        ✍️ Sua resposta:
+      <p>
+        Em que situações você usaria cada um desses operadores? Como eles afetam a performance e a experiência do
+        usuário?
       </p>
+
+      <p class="answer">✍️ Sua resposta:</p>
     </div>
   </mat-tab>
 
@@ -175,22 +194,25 @@
     <div class="exercise-description">
       <h2>Exercício 11 - Validação Simulada com RxJS</h2>
 
-      <p>Ao trabalhar com formulários, é comum realizar validações de forma assíncrona. Neste exercício, vamos simular
-        uma validação assíncrona, como a verificação de um nome de usuário disponível.</p>
+      <p>
+        Ao trabalhar com formulários, é comum realizar validações de forma assíncrona. Neste exercício, vamos simular
+        uma validação assíncrona, como a verificação de um nome de usuário disponível.
+      </p>
 
       <strong>Objetivo:</strong>
 
-      <p>Implemente um campo de texto onde o usuário digita um nome de usuário. Simule uma validação assíncrona que
+      <p>
+        Implemente um campo de texto onde o usuário digita um nome de usuário. Simule uma validação assíncrona que
         verifica se o nome de usuário está disponível. Para isso, crie um conjunto de nomes de usuário "já registrados"
         e, ao digitar, verifique se o nome está nessa lista. Aguarde o usuário parar de digitar antes de verificar a
-        disponibilidade.</p>
+        disponibilidade.
+      </p>
 
       <div>
         <esdras-khan-exercise-eleven></esdras-khan-exercise-eleven>
       </div>
     </div>
   </mat-tab>
-
 
   <mat-tab label="Exercício 12: Operadores Comuns">
     <div class="exercise-description">
@@ -222,8 +244,10 @@
 
       <strong>Objetivo:</strong>
 
-      <p>Crie um formulário com dois campos: um para o nome e outro para a idade. Quando ambos forem preenchidos, exiba
-        uma mensagem como "Olá, [nome]! Você tem [idade] anos".</p>
+      <p>
+        Crie um formulário com dois campos: um para o nome e outro para a idade. Quando ambos forem preenchidos, exiba
+        uma mensagem como "Olá, [nome]! Você tem [idade] anos".
+      </p>
 
       <div>
         <esdras-khan-exercise-fourteen></esdras-khan-exercise-fourteen>
@@ -235,13 +259,17 @@
     <div class="exercise-description">
       <h2>Exercício 15 - Filtrando Palavras com RxJS</h2>
 
-      <p>O operador <span class="code">filter</span> pode ser muito útil para filtrar fluxos de eventos com base em uma
-        condição específica. Neste exercício, vamos utilizá-lo para filtrar palavras digitadas em um campo de texto.</p>
+      <p>
+        O operador <span class="code">filter</span> pode ser muito útil para filtrar fluxos de eventos com base em uma
+        condição específica. Neste exercício, vamos utilizá-lo para filtrar palavras digitadas em um campo de texto.
+      </p>
 
       <strong>Objetivo:</strong>
 
-      <p>Implemente um campo de entrada de texto onde as palavras digitadas são filtradas e apenas as que começam com a
-        letra "A" ou "a" são exibidas no console.</p>
+      <p>
+        Implemente um campo de entrada de texto onde as palavras digitadas são filtradas e apenas as que começam com a
+        letra "A" ou "a" são exibidas no console.
+      </p>
 
       <div>
         <esdras-khan-exercise-fifteen></esdras-khan-exercise-fifteen>
@@ -249,13 +277,14 @@
     </div>
   </mat-tab>
 
-
   <mat-tab label="Exercício 16: Operadores Comuns">
     <div class="exercise-description">
       <h2>Exercício 16 - Operadores Comuns</h2>
-      <p>Simule cliques em um botão que dispara uma requisição (pode ser uma <span
-        class="code">of(...).pipe(delay(...))</span>). Permita múltiplos cliques e trate cada requisição
-        individualmente.</p>
+      <p>
+        Simule cliques em um botão que dispara uma requisição (pode ser uma
+        <span class="code">of(...).pipe(delay(...))</span>). Permita múltiplos cliques e trate cada requisição
+        individualmente.
+      </p>
     </div>
     <div>
       <esdras-khan-exercise-sixteen></esdras-khan-exercise-sixteen>
@@ -265,8 +294,10 @@
   <mat-tab label="Exercício 17: Operadores Comuns">
     <div class="exercise-description">
       <h2>Exercício 17 - Operadores Comuns</h2>
-      <p>Faça com que cliques em um botão disparem requisições simuladas, mas cada nova requisição só deve começar
-        depois que a anterior for concluída.</p>
+      <p>
+        Faça com que cliques em um botão disparem requisições simuladas, mas cada nova requisição só deve começar depois
+        que a anterior for concluída.
+      </p>
     </div>
     <div>
       <esdras-khan-exercise-seventeen></esdras-khan-exercise-seventeen>
@@ -276,8 +307,10 @@
   <mat-tab label="Exercício 18: Operadores Comuns">
     <div class="exercise-description">
       <h2>Exercício 18 - Operadores Comuns</h2>
-      <p>Simule um campo de busca: enquanto o usuário digita, uma requisição é feita. Apenas a última busca deve ser
-        válida. As anteriores devem ser canceladas.</p>
+      <p>
+        Simule um campo de busca: enquanto o usuário digita, uma requisição é feita. Apenas a última busca deve ser
+        válida. As anteriores devem ser canceladas.
+      </p>
     </div>
     <div>
       <esdras-khan-exercise-eighteen></esdras-khan-exercise-eighteen>
@@ -287,8 +320,10 @@
   <mat-tab label="Exercício 19: Operadores Comuns">
     <div class="exercise-description">
       <h2>Exercício 19 - Operadores Comuns</h2>
-      <p>Simule um botão "Entrar" em um sistema. Se o usuário clicar várias vezes seguidas, só a primeira requisição
-        deve ser executada. As demais devem ser ignoradas até que a primeira termine.</p>
+      <p>
+        Simule um botão "Entrar" em um sistema. Se o usuário clicar várias vezes seguidas, só a primeira requisição deve
+        ser executada. As demais devem ser ignoradas até que a primeira termine.
+      </p>
     </div>
     <div>
       <esdras-khan-exercise-nineteen></esdras-khan-exercise-nineteen>
@@ -298,8 +333,10 @@
   <mat-tab label="Exercício 20: Operadores Comuns">
     <div class="exercise-description">
       <h2>Exercício 20 - Operadores Comuns</h2>
-      <p>Simule um campo de busca: enquanto o usuário digita, uma requisição é feita. Apenas a última busca deve ser
-        válida. As anteriores devem ser canceladas.</p>
+      <p>
+        Simule um campo de busca: enquanto o usuário digita, uma requisição é feita. Apenas a última busca deve ser
+        válida. As anteriores devem ser canceladas.
+      </p>
     </div>
     <div>
       <esdras-khan-exercise-twenty></esdras-khan-exercise-twenty>
