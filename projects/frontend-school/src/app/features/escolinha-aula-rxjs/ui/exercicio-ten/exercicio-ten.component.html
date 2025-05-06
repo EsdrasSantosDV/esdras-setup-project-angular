@@ -1,1 +1,7 @@
 <p>exercicio-ten works!</p>
+<form [formGroup]="formGroup">
+    <label for="search">Search:</label>
+    <input id="search" #searchInput formControlName="search" type="text" placeholder="Digite algo...">
+  </form>
+  
+  <button #btnSearch>Buscar</button>

@@ -1,1 +1,9 @@
 <p>exercicio-two works!</p>
+
+Valor do FormControl: {{ formGroup.get('name')?.value }}
+
+
+<form [formGroup]="formGroup">
+    <label for="name">Nome:</label>
+    <input id="name" type="text" formControlName="name" />
+</form>

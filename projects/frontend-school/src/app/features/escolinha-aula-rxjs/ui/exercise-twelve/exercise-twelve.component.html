@@ -1,1 +1,7 @@
 <p>exercise-twelve works!</p>
+
+<form [formGroup]="formGroup">
+  <label for="search">Busca:  </label>
+  <input id="search" #searchInput formControlName="search" type="text" placeholder="Digite algo..."><br>
+  <button #btnSearch>Buscar</button> 
+</form>
