@@ -189,7 +189,12 @@
         usuário?
       </p>
 
-      <p class="answer">✍️ Sua resposta:</p>
+      <p class="answer">
+        ✍️ Sua resposta: usaria o debounce em um autocomplete para que não fique "piscando" os resultados e também para 
+        que alivie o back, no throttle para não realizar multiplas pesquisas ao mesmo tempo num caso de scroll infinito. 
+        Assim evitando requisições desnecessárias e melhorando a performance da aplicação. Para o usuário isso é bom 
+        porque ele não fica vendo resultados que não são relevantes e não tem que esperar o back retornar várias vezes.
+      </p>
     </div>
   </mat-tab>
 
@@ -288,6 +293,10 @@
         <span class="code">of(...).pipe(delay(...))</span>). Permita múltiplos cliques e trate cada requisição
         individualmente.
       </p>
+
+      <div>
+        <esdras-khan-exercicio-sixteen></esdras-khan-exercicio-sixteen>
+      </div>
     </div>
   </mat-tab>
 
@@ -298,6 +307,10 @@
         Faça com que cliques em um botão disparem requisições simuladas, mas cada nova requisição só deve começar depois
         que a anterior for concluída.
       </p>
+
+      <div>
+        <esdras-khan-exercicio-seventeen></esdras-khan-exercicio-seventeen>
+      </div>
     </div>
   </mat-tab>
 
@@ -309,6 +322,10 @@
         válida. As anteriores devem ser canceladas.
       </p>
     </div>
+
+    <div>
+      <esdras-khan-exercicio-eighteen></esdras-khan-exercicio-eighteen>
+    </div>
   </mat-tab>
 
   <mat-tab label="Exercício 19: Operadores Comuns">
@@ -318,6 +335,10 @@
         Simule um botão "Entrar" em um sistema. Se o usuário clicar várias vezes seguidas, só a primeira requisição deve
         ser executada. As demais devem ser ignoradas até que a primeira termine.
       </p>
+
+      <div>
+        <esdras-khan-exercicio-nineteen></esdras-khan-exercicio-nineteen>
+      </div>
     </div>
   </mat-tab>
 
@@ -328,6 +349,10 @@
         Simule um campo de busca: enquanto o usuário digita, uma requisição é feita. Apenas a última busca deve ser
         válida. As anteriores devem ser canceladas.
       </p>
+
+      <div>
+        <esdras-khan-exercicio-twenty></esdras-khan-exercicio-twenty>
+      </div>
     </div>
   </mat-tab>
 

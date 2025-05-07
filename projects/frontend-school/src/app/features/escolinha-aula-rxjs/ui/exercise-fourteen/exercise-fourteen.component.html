@@ -1,1 +1,14 @@
-<p>exercise-fourteen works!</p>
+<form [formGroup]="formulario">
+    <div>
+      <label for="nome">Nome:</label>
+      <input id="nome" formControlName="nome" placeholder="Digite seu nome" />
+    </div>
+  
+    <div>
+      <label for="idade">Idade:</label>
+      <input id="idade" formControlName="idade" type="number" placeholder="Digite sua idade" />
+    </div>
+  </form>
+  
+  <p *ngIf="mensagem">{{ mensagem }}</p>
+  

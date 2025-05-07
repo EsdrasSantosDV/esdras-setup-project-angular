@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'esdras-khan-exercicio-two',
@@ -10,9 +10,9 @@ import { FormBuilder, FormControl, ReactiveFormsModule } from '@angular/forms';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExercicioTwoComponent implements OnInit {
-  aboboraBuilder = inject(FormBuilder);
+  fb = inject(FormBuilder);
 
-  abobora = this.aboboraBuilder.group({
+  abobora = this.fb.group({
     aboboraType: [''],
   });
 

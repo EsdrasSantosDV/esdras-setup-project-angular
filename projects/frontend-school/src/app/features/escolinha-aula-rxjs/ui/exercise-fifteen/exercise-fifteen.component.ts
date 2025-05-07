@@ -8,4 +8,4 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrl: './exercise-fifteen.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExerciseFifteenComponent {}
+export class ExercicioFifteenComponent {}

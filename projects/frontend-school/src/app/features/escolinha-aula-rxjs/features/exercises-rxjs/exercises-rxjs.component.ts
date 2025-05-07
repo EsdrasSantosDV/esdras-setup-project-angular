@@ -10,11 +10,16 @@ import { ExercicioEightComponent } from '../../ui/exercicio-eight/exercicio-eigh
 import { ExercicioTenComponent } from '../../ui/exercicio-ten/exercicio-ten.component';
 import { ExercicioNineComponent } from '../../ui/exercicio-nine/exercicio-nine.component';
 import { ExercicioSixComponent } from '../../ui/exercicio-six/exercicio-six.component';
-import { ExerciseElevenComponent } from '../../ui/exercise-eleven/exercise-eleven.component';
-import { ExerciseTwelveComponent } from '../../ui/exercise-twelve/exercise-twelve.component';
-import { ExerciseThirteenComponent } from '../../ui/exercise-thirteen/exercise-thirteen.component';
-import { ExerciseFourteenComponent } from '../../ui/exercise-fourteen/exercise-fourteen.component';
-import { ExerciseFifteenComponent } from '../../ui/exercise-fifteen/exercise-fifteen.component';
+import { ExercicioElevenComponent } from '../../ui/exercise-eleven/exercise-eleven.component';
+import { ExercicioTwelveComponent } from '../../ui/exercise-twelve/exercise-twelve.component';
+import { ExercicioThirteenComponent } from '../../ui/exercise-thirteen/exercise-thirteen.component';
+import { ExercicioFourteenComponent } from '../../ui/exercise-fourteen/exercise-fourteen.component';
+import { ExercicioFifteenComponent } from '../../ui/exercise-fifteen/exercise-fifteen.component';
+import { ExercicioSixteenComponent } from '../../ui/exercicio-sixteen/exercise-sixteen.component';
+import { ExercicioSeventeenComponent } from '../../ui/exercicio-seventeen/exercicio-seventeen.component';
+import { ExercicioNineteenComponent } from '../../ui/exercicio-nineteen/exercicio-nineteen.component';
+import { ExercicioTwentyComponent } from '../../ui/exercicio-twenty/exercicio-twenty.component';
+import { ExercicioEighteenComponent } from '../../ui/exercicio-eighteen/exercicio-eighteen.component';
 
 @Component({
   selector: 'esdras-khan-exercises-rxjs',
@@ -31,11 +36,16 @@ import { ExerciseFifteenComponent } from '../../ui/exercise-fifteen/exercise-fif
     ExercicioTenComponent,
     ExercicioNineComponent,
     ExercicioSixComponent,
-    ExerciseThirteenComponent,
-    ExerciseFourteenComponent,
-    ExerciseFifteenComponent,
-    ExerciseTwelveComponent,
-    ExerciseElevenComponent,
+    ExercicioThirteenComponent,
+    ExercicioFourteenComponent,
+    ExercicioFifteenComponent,
+    ExercicioTwelveComponent,
+    ExercicioElevenComponent,
+    ExercicioSixteenComponent,
+    ExercicioSeventeenComponent,
+    ExercicioEighteenComponent,
+    ExercicioNineteenComponent,
+    ExercicioTwentyComponent,
   ],
   templateUrl: './exercises-rxjs.component.html',
   styleUrl: './exercises-rxjs.component.scss',
