@@ -6,8 +6,6 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   imports: [],
   templateUrl: './exercicio-seventeen.component.html',
   styleUrl: './exercicio-seventeen.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExercicioSeventeenComponent {
-
-}
+export class ExercicioSeventeenComponent {}

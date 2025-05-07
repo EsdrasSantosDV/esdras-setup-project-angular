@@ -1,11 +1,10 @@
 <form [formGroup]="animal" class="animalForm">
-    <div>
-      <label for="writeAnimal">Animal: </label>
-      <input id="writeAnimal" formControlName="writeAnimal" #animalInput />
-    </div>
-  
-    <button type="button" class="switchButton" (click)="toggleMode()">Trocar modo</button>
-  
-    <p><strong>Modo atual:</strong> {{ mode }}</p>
-  </form>
-  
+  <div>
+    <label for="writeAnimal">Animal: </label>
+    <input id="writeAnimal" formControlName="writeAnimal" #animalInput />
+  </div>
+
+  <button type="button" class="switchButton" (click)="toggleMode()">Trocar modo</button>
+
+  <p><strong>Modo atual:</strong> {{ mode }}</p>
+</form>
