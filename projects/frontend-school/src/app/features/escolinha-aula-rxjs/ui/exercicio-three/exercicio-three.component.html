@@ -1,1 +1,15 @@
-<p>exercicio-three works!</p>
+<div class="values-container">
+  <div class="original-values">
+    <h3>Valores Originais:</h3>
+    <div *ngFor="let value of originalValues$ | async">
+      {{ value }}
+    </div>
+  </div>
+
+  <div class="squared-values">
+    <h3>Valores ao quadrado:</h3>
+    <div *ngFor="let value of squaredValues$ | async">
+      {{ value }}
+    </div>
+  </div>
+</div>

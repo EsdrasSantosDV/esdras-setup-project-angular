@@ -1,1 +1,4 @@
-<p>exercicio-five works!</p>
+<div class="search-container">
+  <input [formControl]="searchControl" placeholder="Digite aqui para buscar..." class="search-input" />
+  <div class="search-result" *ngIf="searchValue()">Resultado da busca: {{ searchValue() }}</div>
+</div>
