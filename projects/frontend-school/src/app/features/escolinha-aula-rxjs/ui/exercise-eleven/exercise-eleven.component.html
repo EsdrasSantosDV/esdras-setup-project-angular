@@ -1,1 +1,4 @@
-<p>exercise-eleven works!</p>
+<form [formGroup]="form">
+  <input type="text" formControlName="name" placeholder="Name" />
+  <div *ngIf="form.get('name')?.hasError('usernameTaken')">Este nome de usuário já está em uso.</div>
+</form>

@@ -1,1 +1,4 @@
-<p>exercicio-two works!</p>
+<form [formGroup]="form">
+  <input type="text" formControlName="name" placeholder="Digite seu nome" />
+</form>
+{{ form.valueChanges | async | json }}

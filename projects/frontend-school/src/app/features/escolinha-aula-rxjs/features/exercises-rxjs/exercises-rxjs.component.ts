@@ -15,6 +15,7 @@ import { ExerciseTwelveComponent } from '../../ui/exercise-twelve/exercise-twelv
 import { ExerciseThirteenComponent } from '../../ui/exercise-thirteen/exercise-thirteen.component';
 import { ExerciseFourteenComponent } from '../../ui/exercise-fourteen/exercise-fourteen.component';
 import { ExerciseFifteenComponent } from '../../ui/exercise-fifteen/exercise-fifteen.component';
+import { ExerciseSixteenComponent } from '../../ui/exercise-sixteen/exercise-sixteen.component';
 
 @Component({
   selector: 'esdras-khan-exercises-rxjs',
@@ -36,6 +37,7 @@ import { ExerciseFifteenComponent } from '../../ui/exercise-fifteen/exercise-fif
     ExerciseThirteenComponent,
     ExerciseFourteenComponent,
     ExerciseFifteenComponent,
+    ExerciseSixteenComponent,
   ],
   templateUrl: './exercises-rxjs.component.html',
   styleUrl: './exercises-rxjs.component.scss',

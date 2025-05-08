@@ -1,1 +1,12 @@
-<p>exercise-fourteen works!</p>
+<form [formGroup]="form">
+  <label>
+    Nome:
+    <input formControlName="name" />
+  </label>
+  <label>
+    Idade:
+    <input formControlName="age" type="number" />
+  </label>
+</form>
+
+<p *ngIf="message$ | async as message">{{ message }}</p>
