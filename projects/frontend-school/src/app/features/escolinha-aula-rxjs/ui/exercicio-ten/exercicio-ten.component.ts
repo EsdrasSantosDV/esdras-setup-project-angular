@@ -1,14 +1,6 @@
 import { AsyncPipe } from '@angular/common';
-import {
-  AfterViewInit,
-  ChangeDetectionStrategy,
-  Component,
-  ElementRef,
-  OnDestroy,
-  OnInit,
-  ViewChild,
-} from '@angular/core';
-import { BehaviorSubject, debounceTime, fromEvent, map, Observable, Subscription, tap, throttleTime } from 'rxjs';
+import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { debounceTime, fromEvent, Observable, tap, throttleTime } from 'rxjs';
 
 @Component({
   selector: 'esdras-khan-exercicio-ten',
@@ -42,9 +34,6 @@ export class ExercicioTenComponent implements OnInit {
   throttle$!: Observable<unknown>;
 
   ngOnInit(): void {
-    console.log(this.debounceButton);
-    console.log(this.throttleButton);
-
     this.debounce$ = fromEvent(this.debounceButton.nativeElement, 'click').pipe(
       debounceTime(1000),
       tap(() => console.log('Ex10 - DebounceTime - clique registrado')),
