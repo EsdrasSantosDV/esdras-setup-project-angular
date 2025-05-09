@@ -2,6 +2,6 @@
 <form class="bg-gray-300 w-2/4 p-3 rounded">
   <input class="rounded p-2 w-2/4" [formControl]="searchControl" placeholder="Digite para buscar..." />
 </form>
-<p *ngIf="searchControl.value" class="bg-gray-300 w-2/4 p-3 mt-4 rounded">
-  O valor buscado foi: {{ valueSearched | async }}
+<p *ngIf="valueSearched | async as value" class="bg-gray-300 w-2/4 p-3 mt-4 rounded">
+  O valor buscado foi: {{ value }}
 </p>
