@@ -1,1 +1,13 @@
 <p>exercise-fifteen works!</p>
+<form class="bg-gray-300 w-2/4 p-3 rounded">
+  <input
+    id="textInput"
+    type="text"
+    [formControl]="textControl"
+    placeholder="Digite algo aqui"
+    class="rounded p-2 w-2/4"
+  />
+</form>
+<p class="bg-gray-300 w-2/4 p-3 mt-4 rounded" *ngIf="textFiltered$ | async as value">
+  Texto filtrado: <strong>{{ value }}</strong>
+</p>
