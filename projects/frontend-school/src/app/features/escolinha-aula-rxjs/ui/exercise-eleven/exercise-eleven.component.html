@@ -1,1 +1,10 @@
-<p>exercise-eleven works!</p>
+<form class="bg-gray-300 w-2/4 p-3 rounded">
+  <input class="rounded p-2 w-2/4" [formControl]="userControl" placeholder="Digite para buscar..." />
+</form>
+<p *ngIf="(isInList | async) === false && (valueSearched | async) as value" class="bg-gray-300 w-2/4 p-3 mt-4 rounded">
+  Nome não está presente na lista! {{ value }}
+</p>
+
+<p *ngIf="isInList | async" class="bg-gray-300 w-2/4 p-3 mt-4 rounded">
+  Nome está presente na lista! {{ userControl.value }}
+</p>

@@ -1,1 +1,15 @@
 <p>exercise-fourteen works!</p>
+
+<form [formGroup]="form">
+  <label>
+    Nome:
+    <input formControlName="nome" />
+  </label>
+  <br />
+  <label>
+    Idade:
+    <input formControlName="idade" type="number" />
+  </label>
+</form>
+
+<p>{{ mensagem$ | async }}</p>
