@@ -1,1 +1,15 @@
 <p>exercise-fourteen works!</p>
+<form [formGroup]="form" class="bg-gray-300 w-2/4 p-3 rounded">
+  <div class="mb-4">
+    <label for="name" class="block mb-2">Nome:</label>
+    <input id="name" formControlName="name" class="rounded p-2 w-full" placeholder="Digite seu nome" />
+  </div>
+  <div class="mb-4">
+    <label for="age" class="block mb-2">Idade:</label>
+    <input id="age" type="number" formControlName="age" class="rounded p-2 w-full" placeholder="Digite sua idade" />
+  </div>
+</form>
+
+<p *ngIf="message" class="bg-green-300 w-2/4 p-3 mt-4 rounded">
+  {{ message }}
+</p>
