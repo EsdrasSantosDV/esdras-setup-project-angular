@@ -17,7 +17,7 @@ export class ExerciseThirteenComponent implements OnInit {
     const fonte$ = fromEvent(this.button.nativeElement, 'click').pipe(
       startWith(0),
       scan((acc) => acc + 1, 0),
-    )
+    );
 
     fonte$.subscribe((value) => {
       console.log(value);

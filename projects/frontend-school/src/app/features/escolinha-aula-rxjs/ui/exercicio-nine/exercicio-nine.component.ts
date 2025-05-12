@@ -11,8 +11,5 @@ import { filter, interval } from 'rxjs';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExercicioNineComponent {
-
-  fonte$ = interval(1000).pipe(
-    filter((value) => value >= 5 && value <= 5),
-  )
+  fonte$ = interval(1000).pipe(filter((value) => value >= 5 && value <= 5));
 }

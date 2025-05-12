@@ -14,5 +14,5 @@ export class ExercicioSevenComponent {
   fonte$ = interval(1000).pipe(
     takeWhile((value) => value < 11),
     skip(4),
-  )
+  );
 }
