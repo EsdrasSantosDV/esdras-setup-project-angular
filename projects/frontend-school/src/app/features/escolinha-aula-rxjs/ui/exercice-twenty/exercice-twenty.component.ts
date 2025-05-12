@@ -34,7 +34,6 @@ export class ExerciceTwentyComponent implements OnInit {
   }
 }
 
-
 /*
  Excelente!
 */

@@ -26,7 +26,6 @@ export class ExerciceSeventeenComponent {
   }
 }
 
-
 /*
  Excelente! ENTENDEU O PROPOSITO
 */

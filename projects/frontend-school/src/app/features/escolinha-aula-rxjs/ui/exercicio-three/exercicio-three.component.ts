@@ -17,7 +17,6 @@ export class ExercicioThreeComponent {
   quadrado$ = this.fonte$.pipe(map((valor) => valor * valor));
 }
 
-
 /*
  Excelente!
  muito bom, sempre realize de forma declarativa assim!.

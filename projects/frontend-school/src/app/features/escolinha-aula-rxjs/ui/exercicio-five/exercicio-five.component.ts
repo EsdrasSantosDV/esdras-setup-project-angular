@@ -28,7 +28,6 @@ export class ExercicioFiveComponent implements OnInit {
   }
 }
 
-
 /*
  Excelente!
  mas voce poderia ter feito o subscribe no template, e nao no ts.

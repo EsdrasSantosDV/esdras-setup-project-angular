@@ -15,7 +15,6 @@ export class ExercicioOneComponent {
   fonte$ = interval(1000);
 }
 
-
 /*
  Excelente!
 */
