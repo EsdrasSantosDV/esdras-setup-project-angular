@@ -1,11 +1,12 @@
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'esdras-khan-exercise-thirteen',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, PrimaryButtonComponent],
   templateUrl: './exercise-thirteen.component.html',
   styleUrl: './exercise-thirteen.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

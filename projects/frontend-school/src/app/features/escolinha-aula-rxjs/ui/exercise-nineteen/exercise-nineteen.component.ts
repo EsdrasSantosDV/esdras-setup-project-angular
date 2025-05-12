@@ -1,11 +1,12 @@
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { delay, exhaustMap, Observable, of, Subject, tap } from 'rxjs';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'esdras-khan-exercise-nineteen',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, PrimaryButtonComponent],
   templateUrl: './exercise-nineteen.component.html',
   styleUrl: './exercise-nineteen.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,7 +23,9 @@ export class ExerciseNineteenComponent {
 
   constructor() {
     this.loginResult$ = this.loginClick$.pipe(
-      exhaustMap(() => this.simulateLogin().pipe(tap((response) => console.log(response)))),
+      exhaustMap(() =>
+        this.simulateLogin().pipe(tap((response) => console.log(response))),
+      ),
     );
   }
 

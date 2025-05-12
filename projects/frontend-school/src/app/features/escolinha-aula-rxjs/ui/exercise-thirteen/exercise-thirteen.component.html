@@ -1,3 +1,7 @@
 <p>exercise-thirteen works!</p>
 <p class="bg-gray-300 w-2/4 p-3 rounded">Contador: {{ count$ | async }}</p>
-<button class="bg-gray-900 px-4 py-2 text-white rounded" (click)="increment()" type="button">Incrementar</button>
+<esdras-khan-primary-button
+  className="bg-gray-900 px-4 py-2 text-white rounded hover:px-5 transition-all"
+  [label]="'Incrementar'"
+  (clicked)="increment()"
+></esdras-khan-primary-button>

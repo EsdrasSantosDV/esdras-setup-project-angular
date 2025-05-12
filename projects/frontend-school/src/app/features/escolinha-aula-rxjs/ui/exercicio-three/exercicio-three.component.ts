@@ -1,12 +1,31 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { interval, map, Observable, Subject, Subscription, switchMap, take } from 'rxjs';
+import {
+  interval,
+  map,
+  Observable,
+  Subject,
+  Subscription,
+  switchMap,
+  take,
+} from 'rxjs';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'esdras-khan-exercicio-three',
   standalone: true,
-  imports: [AsyncPipe, FormsModule, ReactiveFormsModule],
+  imports: [
+    AsyncPipe,
+    FormsModule,
+    ReactiveFormsModule,
+    PrimaryButtonComponent,
+  ],
   templateUrl: './exercicio-three.component.html',
   styleUrl: './exercicio-three.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

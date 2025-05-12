@@ -1,11 +1,12 @@
 import { AsyncPipe } from '@angular/common';
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { interval, Observable, Subject, switchMap, take } from 'rxjs';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'esdras-khan-exercicio-one',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, PrimaryButtonComponent],
   templateUrl: './exercicio-one.component.html',
   styleUrl: './exercicio-one.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -25,7 +26,9 @@ export class ExercicioOneComponent implements OnInit {
   reset$ = new Subject<void>();
 
   ngOnInit(): void {
-    this.secondCounter$ = this.reset$.pipe(switchMap(() => interval(1000).pipe(take(11))));
+    this.secondCounter$ = this.reset$.pipe(
+      switchMap(() => interval(1000).pipe(take(11))),
+    );
     setTimeout(() => {
       this.reset$.next();
     });

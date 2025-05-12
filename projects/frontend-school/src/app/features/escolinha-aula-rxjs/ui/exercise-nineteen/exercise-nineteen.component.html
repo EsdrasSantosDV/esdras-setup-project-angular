@@ -1,3 +1,12 @@
 <p>exercise-nineteen works!</p>
-<p class="bg-gray-300 w-2/4 p-3 rounded">Resultado: {{ loginResult$ | async }}</p>
-<button class="bg-gray-900 px-4 py-2 text-white rounded" (click)="onClick()" type="button">Logarr</button>
+<p class="bg-gray-300 w-2/4 p-3 rounded">
+  Resultado: {{ loginResult$ | async }}
+</p>
+
+<esdras-khan-primary-button
+  className="bg-gray-900 px-4 py-2 text-white rounded hover:px-5 transition-all"
+  [label]="'Logar'"
+  (clicked)="onClick()"
+>
+  ,
+</esdras-khan-primary-button>

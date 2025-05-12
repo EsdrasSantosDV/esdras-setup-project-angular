@@ -23,10 +23,10 @@ import { debounceTime, distinctUntilChanged, tap } from 'rxjs/operators';
 */
 export class ExercicioFiveComponent implements OnInit {
   searchControl = new FormControl();
-  valueSearched!: Observable<string | null>;
+  valueSearched$!: Observable<string>;
 
   ngOnInit() {
-    this.valueSearched = this.searchControl.valueChanges.pipe(
+    this.valueSearched$ = this.searchControl.valueChanges.pipe(
       debounceTime(300),
       distinctUntilChanged(),
       tap((value) => console.log('buscando por: ', value)),

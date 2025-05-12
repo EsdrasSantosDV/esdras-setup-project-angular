@@ -1,2 +1,10 @@
-<p class="bg-gray-300 w-2/4 p-3 rounded">Resultado da multiplicação: {{ squareOfNumbers$ | async }}</p>
-<button class="bg-gray-900 px-4 py-2 text-white rounded" (click)="reset()" type="button">Resetar</button>
+<p class="bg-gray-300 w-2/4 p-3 rounded">
+  Resultado da multiplicação: {{ squareOfNumbers$ | async }}
+</p>
+<esdras-khan-primary-button
+  className="bg-gray-900 px-4 py-2 text-white rounded hover:px-5 transition-all"
+  [label]="'Resetar'"
+  (clicked)="reset()"
+>
+  ,
+</esdras-khan-primary-button>

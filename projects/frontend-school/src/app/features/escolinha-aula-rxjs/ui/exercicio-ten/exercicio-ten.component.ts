@@ -1,11 +1,18 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { debounceTime, fromEvent, Observable, tap, throttleTime } from 'rxjs';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'esdras-khan-exercicio-ten',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, PrimaryButtonComponent],
   templateUrl: './exercicio-ten.component.html',
   styleUrls: ['./exercicio-ten.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,

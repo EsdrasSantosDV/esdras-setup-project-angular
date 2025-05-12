@@ -1,11 +1,24 @@
 import { AsyncPipe } from '@angular/common';
-import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import { BehaviorSubject, delay, Observable, of, Subscription, tap } from 'rxjs';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  OnInit,
+} from '@angular/core';
+import {
+  BehaviorSubject,
+  delay,
+  Observable,
+  of,
+  Subscription,
+  tap,
+} from 'rxjs';
+import { PrimaryButtonComponent } from '../primary-button/primary-button.component';
 
 @Component({
   selector: 'esdras-khan-exercise-sixteen',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, PrimaryButtonComponent],
   templateUrl: './exercise-sixteen.component.html',
   styleUrl: './exercise-sixteen.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -36,7 +49,10 @@ export class ExerciseSixteenComponent implements OnInit, OnDestroy {
         delay(1000),
         tap((response) => {
           console.log(`Ex16: ${response}`);
-          this.responsesSubject.next([...this.responsesSubject.value, response]);
+          this.responsesSubject.next([
+            ...this.responsesSubject.value,
+            response,
+          ]);
         }),
       )
       .subscribe();
