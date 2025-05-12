@@ -35,7 +35,7 @@
       <p>Sabemos que o <span class="code">FormControl.valueChanges</span> é uma stream que podemos observar com RxJS.
         Por que não conseguimos usar esse tipo de abordagem quando trabalhamos com template-driven forms no Angular?</p>
 
-      <p class="answer">✍️ Sua resposta:</p>
+      <p class="answer">✍️ Sua resposta: Template-driven é baseado em HTML e uso de diretivas como o ngModel, na necessidade de algo reativo, recomenda-se outra abordagem, como o Reactive Forms. </p>
     </div>
   </mat-tab>
 
@@ -108,7 +108,7 @@
 
   <mat-tab label="Exercício 7: Operadores Comuns">
     <div class="exercise-description">
-      <h2>Exercício 6 - Operadores Comuns</h2>
+      <h2>Exercício 7 - Operadores Comuns</h2>
 
       <p>Crie uma fonte de números de 1 a 10 e ignore os 3 primeiros valores.</p>
 
@@ -120,7 +120,7 @@
 
   <mat-tab label="Exercício 8: Operadores Comuns">
     <div class="exercise-description">
-      <h2>Exercício 7 - Operadores Comuns</h2>
+      <h2>Exercício 8 - Operadores Comuns</h2>
 
       <p>Crie uma fonte que emite valores a cada segundo e pare a emissão após os 5 primeiros valores.</p>
 
@@ -132,7 +132,7 @@
 
   <mat-tab label="Exercício 9: Operadores Comuns">
     <div class="exercise-description">
-      <h2>Exercício 8 - Operadores Comuns</h2>
+      <h2>Exercício 9 - Operadores Comuns</h2>
 
       <p>Crie uma fonte de números de 1 a 10 e capture apenas o primeiro número que seja maior que 5.</p>
 
@@ -144,7 +144,7 @@
 
   <mat-tab label="Exercício 10: Comparando Operadores RxJS">
     <div class="exercise-description">
-      <h2>Exercício 11 - Comparando o debounceTime e throttleTime</h2>
+      <h2>Exercício 10 - Comparando o debounceTime e throttleTime</h2>
 
       <p>Em campos de busca ou botões, é importante controlar a frequência com que as ações são executadas. O RxJS
         oferece dois operadores populares para controlar a taxa de emissão de eventos: <span
@@ -166,7 +166,8 @@
         usuário?</p>
 
       <p class="answer">
-        ✍️ Sua resposta:
+        ✍️ Sua resposta: Usaria o debounceTime quando montar um campo de busca, onde faria a requisição após o usuário parar de digitar.
+        Já o throttleTime para evitar que ocorra vários cliques em um botão.
       </p>
     </div>
   </mat-tab>

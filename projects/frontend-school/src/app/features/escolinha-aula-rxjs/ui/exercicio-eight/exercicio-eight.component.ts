@@ -1,11 +1,19 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { interval, take, tap, toArray } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'esdras-khan-exercicio-eight',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './exercicio-eight.component.html',
   styleUrl: './exercicio-eight.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ExercicioEightComponent {}
+export class ExercicioEightComponent {
+  numbers$ = interval(1000).pipe(
+    take(5),
+    toArray(),
+    tap((values) => console.log('Exercise 8:', values)),
+  );
+}

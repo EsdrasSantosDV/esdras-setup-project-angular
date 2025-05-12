@@ -1,1 +1,10 @@
-<p>exercicio-ten works!</p>
+<div class="mb-4">
+  <input #searchInput type="text" placeholder="Buscar..." />
+  <p>Resultado da busca:
+    {{ inputValue }}
+  </p>
+</div>
+
+<div>
+  <button class="px-4 py-2 rounded-md bg-green-500" type="button" #throttledButton>Enviar</button>
+</div>
