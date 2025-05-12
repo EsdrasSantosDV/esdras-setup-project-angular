@@ -2,9 +2,4 @@
   <input type="text" formControlName="search" placeholder="Pesquisar" />
 </form>
 
-<p>
-  Resultado: {{
-    formX.valueChanges | async | json
-  }}
-</p>
-
+<p>Resultado: {{ formX.valueChanges | async | json }}</p>

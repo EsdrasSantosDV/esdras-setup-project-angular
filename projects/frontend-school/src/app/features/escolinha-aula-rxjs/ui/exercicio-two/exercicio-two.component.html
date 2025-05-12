@@ -1,8 +1,5 @@
 <form>
-  <input [formControl]="name" placeholder="Digite seu nome aqui"/>
+  <input [formControl]="name" placeholder="Digite seu nome aqui" />
 </form>
 
-<p>
-  Resultado: {{ name.valueChanges | async | json }}
-</p>
-
+<p>Resultado: {{ name.valueChanges | async | json }}</p>

@@ -17,8 +17,6 @@ export class ExercicioFiveComponent implements OnInit {
     search: [''],
   });
 
-
-
   ngOnInit() {
     this.formX.valueChanges
       .pipe(
