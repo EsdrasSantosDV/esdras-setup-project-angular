@@ -13,3 +13,7 @@ import { CommonModule } from '@angular/common';
 export class ExercicioOneComponent {
   numbers$ = interval(1000);
 }
+
+/*
+ Excelente!
+*/

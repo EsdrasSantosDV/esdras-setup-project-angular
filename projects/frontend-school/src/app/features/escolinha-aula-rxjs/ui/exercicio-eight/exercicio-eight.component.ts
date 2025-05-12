@@ -17,3 +17,8 @@ export class ExercicioEightComponent {
     tap((values) => console.log('Exercise 8:', values)),
   );
 }
+
+/*
+ Excelente!
+ GOSTEI DESSE TO ARRAY, ELE É MUITO INTERESSANTE, E MUITO MAIS CLARO E REATIVO
+*/

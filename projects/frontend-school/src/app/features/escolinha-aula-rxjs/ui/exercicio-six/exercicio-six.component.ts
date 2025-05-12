@@ -28,3 +28,17 @@ export class ExercicioSixComponent implements OnInit {
     console.log('Search value:', value);
   }
 }
+
+/*
+ Excelente!
+ mas pontos de melhoria
+   this.formX.valueChanges.pipe(debounceTime(500), distinctUntilChanged()).subscribe((value) => {
+      this.handleSearch(value?.search || '');
+    });
+
+  const search$ = this.formX.valueChanges.pipe(debounceTime(500), distinctUntilChanged(),tap((value) => {
+    this.handleSearch(value?.search || '');
+  }));
+  deixe sempre o subscribe clean, e não insira logicas adicionais no subscribe, como o debounceTime, deixe isso para o pipe
+  dado que o seu assinante não precise fazer nada além de receber o valor emitido pelo observable.
+*/

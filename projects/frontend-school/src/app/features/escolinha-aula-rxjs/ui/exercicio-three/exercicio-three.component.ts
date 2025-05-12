@@ -16,3 +16,8 @@ export class ExercicioThreeComponent {
     map((n) => (n + 1) * 2),
   );
 }
+
+/*
+ aqui seria na vdd o quadrado de cada numero, seria n*n
+ mas excelente, segue uma abordagem declarativa, onde se declara o que vai ser feito com o valor emitido pelo observable
+*/

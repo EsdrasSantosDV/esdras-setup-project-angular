@@ -20,3 +20,7 @@ export class ExercicioFourComponent {
     }),
   );
 }
+
+/*
+não precisava do takeWhile, seria na vdd so o efeito colateral do tap, que é o console.log
+*/

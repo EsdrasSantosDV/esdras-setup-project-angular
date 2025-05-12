@@ -17,14 +17,16 @@
     <div class="exercise-description">
       <h2>Exercício 2 - Observando mudanças no formulário</h2>
 
-      <p>Um <span class="code">Observable</span> representa um valor ao longo do tempo. Um <span class="code">FormControl</span>
+      <p>Um <span class="code">Observable</span> representa um valor ao longo do tempo. Um <span
+          class="code">FormControl</span>
         possui a propriedade <span class="code">valueChanges</span>, que é um Observable que emite os valores sempre que
         o campo for alterado.</p>
 
       <strong>Objetivo:</strong>
 
       <p>Declare um formulário com um <span class="code">FormControl</span> e se inscreva nas mudanças de valor usando o
-        <span class="code">valueChanges</span>. Exiba um log no console toda vez que o valor for atualizado.</p>
+        <span class="code">valueChanges</span>. Exiba um log no console toda vez que o valor for atualizado.
+      </p>
 
       <div>
         <esdras-khan-exercicio-two></esdras-khan-exercicio-two>
@@ -35,7 +37,15 @@
       <p>Sabemos que o <span class="code">FormControl.valueChanges</span> é uma stream que podemos observar com RxJS.
         Por que não conseguimos usar esse tipo de abordagem quando trabalhamos com template-driven forms no Angular?</p>
 
-      <p class="answer">✍️ Sua resposta: Template-driven é baseado em HTML e uso de diretivas como o ngModel, na necessidade de algo reativo, recomenda-se outra abordagem, como o Reactive Forms. </p>
+      <p class="answer">✍️ Sua resposta: Template-driven é baseado em HTML e uso de diretivas como o ngModel, na
+        necessidade de algo reativo, recomenda-se outra abordagem, como o Reactive Forms. </p>
+
+        REVISÃO:O template driven tem como premissa usar a declaração da estrutura em relação a valor e validação pelo template, ja no Reactive
+        pelo ts, onde se declara o valor e a validação no ts. tanto as duas abordagens podem ser reativas e declarativas
+        https://blog.simplified.courses/angular-template-driven-forms-with-signals/
+        da uma lida nesse artigo, que fala sobre template driven forms com signals, então essa parte de ser algo reativo so pro reactive não necessariamente
+        e certa.
+
     </div>
   </mat-tab>
 
@@ -153,7 +163,8 @@
       <strong>Objetivo:</strong>
 
       <p>Implemente um campo de busca ou um botão e use o operador <span class="code">fromEvent</span> para capturar os
-        eventos. Em seguida, teste ambos os operadores <span class="code">debounceTime</span> e <span class="code">throttleTime</span>
+        eventos. Em seguida, teste ambos os operadores <span class="code">debounceTime</span> e <span
+          class="code">throttleTime</span>
         e observe como o comportamento de emissão de eventos muda com cada um.</p>
 
       <div>
@@ -166,9 +177,11 @@
         usuário?</p>
 
       <p class="answer">
-        ✍️ Sua resposta: Usaria o debounceTime quando montar um campo de busca, onde faria a requisição após o usuário parar de digitar.
+        ✍️ Sua resposta: Usaria o debounceTime quando montar um campo de busca, onde faria a requisição após o usuário
+        parar de digitar.
         Já o throttleTime para evitar que ocorra vários cliques em um botão.
       </p>
+      Excelente! RESPOSTA PERFEITA
     </div>
   </mat-tab>
 
@@ -255,7 +268,7 @@
     <div class="exercise-description">
       <h2>Exercício 16 - Operadores Comuns</h2>
       <p>Simule cliques em um botão que dispara uma requisição (pode ser uma <span
-        class="code">of(...).pipe(delay(...))</span>). Permita múltiplos cliques e trate cada requisição
+          class="code">of(...).pipe(delay(...))</span>). Permita múltiplos cliques e trate cada requisição
         individualmente.</p>
     </div>
   </mat-tab>
