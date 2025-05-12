@@ -16,3 +16,9 @@ export class ExercicioThreeComponent {
   fonte$ = interval(1000).pipe(skip(1), take(10));
   quadrado$ = this.fonte$.pipe(map((valor) => valor * valor));
 }
+
+
+/*
+ Excelente!
+ muito bom, sempre realize de forma declarativa assim!.
+*/

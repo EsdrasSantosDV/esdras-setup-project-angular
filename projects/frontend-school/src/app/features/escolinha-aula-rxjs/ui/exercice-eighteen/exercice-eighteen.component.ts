@@ -21,7 +21,7 @@ export class ExerciceEighteenComponent implements OnInit {
         distinctUntilChanged(),
         tap((valor) => console.log('🔎 Buscando por:', valor)),
         switchMap((termo) => (termo ? this.simularBusca(termo) : of(''))),
-        switchMap((termo: string) => this.simularBusca(termo)),
+        switchMap((termo: string) => this.simularBusca(termo)),//NAO PRECISA DO SWITCHMAP AQUI DENOVO
       )
       .subscribe((res) => {
         this.resultado = res;
@@ -34,3 +34,8 @@ export class ExerciceEighteenComponent implements OnInit {
     return of(`Resultado da busca por "${termo}" em ${tempo}ms`).pipe(delay(tempo));
   }
 }
+
+
+/*
+ Excelente!
+*/

@@ -14,3 +14,8 @@ import { interval } from 'rxjs';
 export class ExercicioOneComponent {
   fonte$ = interval(1000);
 }
+
+
+/*
+ Excelente!
+*/

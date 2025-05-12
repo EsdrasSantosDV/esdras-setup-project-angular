@@ -22,3 +22,8 @@ export default class ExercicioTwoComponent implements OnInit {
     });
   }
 }
+
+
+/*
+ Excelente!
+*/

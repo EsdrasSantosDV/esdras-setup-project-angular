@@ -26,3 +26,7 @@ export class ExerciseTwelveComponent implements AfterViewInit {
     });
   }
 }
+
+/*
+MUITO BOM!, MAS TENTE DEIXAR O SUBSCRIBE CLEAN, SEM EFEITOS COLATERAIS
+*/

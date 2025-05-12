@@ -33,3 +33,8 @@ export class ExerciceTwentyComponent implements OnInit {
     return of(`Resultado da busca por "${termo}" em ${tempo}ms`).pipe(delay(tempo));
   }
 }
+
+
+/*
+ Excelente!
+*/

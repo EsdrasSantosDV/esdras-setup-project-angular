@@ -1,6 +1,6 @@
-import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { of, range, scan, skip } from 'rxjs';
+import { range, skip, tap, toArray } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'esdras-khan-exercicio-seven',
@@ -10,11 +10,25 @@ import { of, range, scan, skip } from 'rxjs';
   styleUrl: './exercicio-seven.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-
-//Crie uma fonte de números de 1 a 10 e ignore os 3 primeiros valores.
 export class ExercicioSevenComponent {
-  fonte$ = range(1, 10).pipe(
-    skip(3),
-    scan((acc, val) => [...acc, val], [] as number[]),
-  );
+  numbers: number[] = [];
+
+  constructor() {
+    range(1, 10)
+      .pipe(
+        skip(3),
+        tap((valor) => {
+          this.numbers.push(valor);
+        }),
+      )
+      .subscribe();
+    console.log('Exercicio 7:', this.numbers);
+  }
+
+  numbers$ = range(1, 10).pipe(skip(3), toArray());
+  //OLHA ESSA
 }
+
+/*
+ Excelente!
+*/

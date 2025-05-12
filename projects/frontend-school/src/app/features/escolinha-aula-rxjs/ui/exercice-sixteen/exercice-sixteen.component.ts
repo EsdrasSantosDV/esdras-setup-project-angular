@@ -25,3 +25,8 @@ export class ExerciceSixteenComponent {
     return of(`✅ Requisição finalizada em ${tempo}ms`).pipe(delay(tempo));
   }
 }
+
+
+/*
+ Excelente!
+*/

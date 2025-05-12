@@ -25,3 +25,7 @@ export class ExerciseThirteenComponent {
     this.clickSubject.next();
   }
 }
+
+/*
+ Excelente, GOSTEI DESSE SCAN, COM O STARTWITH.
+*/

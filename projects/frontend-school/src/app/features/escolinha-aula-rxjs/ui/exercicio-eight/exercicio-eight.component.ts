@@ -15,3 +15,7 @@ import { interval, take, skip } from 'rxjs';
 export class ExercicioEightComponent {
   fonte$ = interval(1000).pipe(take(5));
 }
+
+/*
+ Excelente!
+*/

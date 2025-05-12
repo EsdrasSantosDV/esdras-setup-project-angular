@@ -35,3 +35,10 @@ export class ExercicioTenComponent implements AfterViewInit {
       });
   }
 }
+
+/*
+ Excelente!
+ mas voce poderia ter feito o subscribe no template, e nao no ts.
+ deixe sempre o subscribe no template, e nao no ts. deixe o framework trabalhar pra ti
+ quando o compoinente e destruido, o subscribe e destruido automaticamente, nao precisa se preocupar com isso.
+*/
