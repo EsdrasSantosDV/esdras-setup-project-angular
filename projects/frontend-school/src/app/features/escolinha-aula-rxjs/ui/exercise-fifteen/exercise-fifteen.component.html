@@ -1,1 +1,7 @@
-<p>exercise-fifteen works!</p>
+<input class="mb-4" type="text" #inputWord placeholder="Digite aqui..." />
+
+<p *ngIf="(filteredWord$ | async) as word; else noWord">
+  Palavra filtrada: {{ word }}
+</p>
+
+<ng-template #noWord></ng-template>

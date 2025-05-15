@@ -1,1 +1,7 @@
-<p>exercise-eleven works!</p>
+<form [formGroup]="form">
+  <label class="mr-4">Nome</label>
+  <input placeholder="Digite aqui" type="text" formControlName="name" />
+
+  <p *ngIf="isTaken">Nome já está em uso.</p>
+  <p *ngIf="!isTaken && form.get('name')?.value">Nome disponível!</p>
+</form>

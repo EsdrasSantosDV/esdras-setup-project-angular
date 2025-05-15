@@ -1,1 +1,23 @@
-<p>exercise-fourteen works!</p>
+<form [formGroup]="form" class="flex flex-col gap-4 max-w-sm">
+  <label class="flex flex-col">
+    <span class="mb-1 text-sm font-medium text-gray-700">Nome:</span>
+    <input
+      type="text"
+      formControlName="name"
+      class="p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+    />
+  </label>
+
+  <label class="flex flex-col">
+    <span class="mb-1 text-sm font-medium text-gray-700">Idade:</span>
+    <input
+      type="number"
+      formControlName="age"
+      class="p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500"
+    />
+  </label>
+</form>
+
+<p *ngIf="message$ | async as message" class="mt-4 text-blue-600 font-semibold">
+  {{ message }}
+</p>
