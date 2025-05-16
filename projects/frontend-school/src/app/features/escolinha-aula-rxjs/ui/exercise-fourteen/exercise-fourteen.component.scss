@@ -1,3 +1,57 @@
 :host {
   display: block;
 }
+
+.exercise-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+
+  h3 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .form-container {
+    max-width: 400px;
+    margin: 20px auto;
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        color: #666;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+
+        &:focus {
+          outline: none;
+          border-color: #2196f3;
+        }
+      }
+    }
+  }
+
+  .message {
+    text-align: center;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e3f2fd;
+    border-radius: 4px;
+
+    p {
+      margin: 0;
+      color: #1976d2;
+      font-size: 18px;
+    }
+  }
+}

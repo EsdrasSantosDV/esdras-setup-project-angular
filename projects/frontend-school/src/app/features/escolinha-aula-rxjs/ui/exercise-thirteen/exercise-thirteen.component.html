@@ -1,1 +1,6 @@
-<p>exercise-thirteen works!</p>
+<div class="exercise-container">
+  <div class="counter-container">
+    <p>Clique: <strong>{{ clickCount$ | async }}</strong></p>
+    <button (click)="onButtonClick()">Clique aqui !</button>
+  </div>
+</div>

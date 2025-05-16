@@ -1,3 +1,58 @@
 :host {
   display: block;
 }
+
+.exercise-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+
+  h3 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .counter-container {
+    text-align: center;
+    margin: 20px 0;
+
+    p {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+
+      strong {
+        color: #2196f3;
+        font-size: 32px;
+      }
+    }
+
+    button {
+      background-color: #2196f3;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: all 0.3s;
+
+      &:hover {
+        background-color: #1976d2;
+        transform: scale(1.05);
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
+  }
+
+  .note {
+    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+    text-align: center;
+  }
+}

@@ -1,1 +1,22 @@
-<p>exercise-eleven works!</p>
+<div class="exercise-container">
+
+  <div class="input-container">
+    <label for="username">Username:</label>
+    <input
+      id="username"
+      type="text"
+      [formControl]="usernameControl"
+      placeholder="Digite o nome de usuário"
+    >
+  </div>
+
+  <div class="validation-message" *ngIf="usernameValidation$ | async as validation">
+    <p [class.valid]="validation.isValid" [class.invalid]="!validation.isValid">
+      {{ validation.message }}
+    </p>
+  </div>
+
+  <div class="note">
+    <span>Nomes cadastrados: {{names.join(', ')}}</span>
+  </div>
+</div>

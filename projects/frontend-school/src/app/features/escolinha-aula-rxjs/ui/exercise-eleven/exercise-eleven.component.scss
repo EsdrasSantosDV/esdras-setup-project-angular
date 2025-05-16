@@ -1,3 +1,64 @@
 :host {
   display: block;
 }
+
+.exercise-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+
+  h3 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .input-container {
+    margin: 20px 0;
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      color: #666;
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+
+      &:focus {
+        outline: none;
+        border-color: #2196f3;
+      }
+    }
+  }
+
+  .validation-message {
+    margin: 10px 0;
+
+    p {
+      margin: 0;
+      padding: 8px;
+      border-radius: 4px;
+
+      &.valid {
+        background-color: #e8f5e9;
+        color: #2e7d32;
+      }
+
+      &.invalid {
+        background-color: #ffebee;
+        color: #c62828;
+      }
+    }
+  }
+
+  .note {
+    margin-top: 20px;
+    color: #666;
+    font-style: italic;
+  }
+}

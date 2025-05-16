@@ -1,1 +1,21 @@
-<p>exercise-twelve works!</p>
+<div class="exercise-container">
+  <div class="input-container">
+    <label for="text">Digite o texto:</label>
+    <input
+      id="text"
+      type="text"
+      [formControl]="textControl"
+      placeholder="Digite algo..."
+    >
+  </div>
+
+  <button (click)="onButtonClick()">Último texto</button>
+
+  <div class="result" *ngIf="buttonClickWithText$ | async as text">
+    <p>Ultimo valor: <strong>{{ text }}</strong></p>
+  </div>
+
+  <div class="note">
+    <p>clique no botão para ver o último texto digitado</p>
+  </div>
+</div>

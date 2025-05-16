@@ -1,1 +1,15 @@
-<p>exercise-fifteen works!</p>
+<div class="exercise-container">
+  <div class="input-container">
+    <label for="searchInput">Digite uma palavra:</label>
+    <input
+      type="text"
+      id="searchInput"
+      [formControl]="searchControl"
+      placeholder="Digite uma palavra que começa com 'A'"
+    >
+  </div>
+
+  <div class="note">
+    <p>Observe o console para ver as palavras que começam com 'A' ou 'a'</p>
+  </div>
+</div>
