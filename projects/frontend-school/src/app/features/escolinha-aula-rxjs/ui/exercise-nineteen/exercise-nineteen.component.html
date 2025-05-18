@@ -1,0 +1,7 @@
+<button class="mb-4 rounded-md border bg-green-500 px-4" (click)="onLoginClick()">Entrar</button>
+
+<div *ngIf="loginStatus$ | async as status">
+  <p *ngIf="status === 'idle'">Clique no botão para entrar.</p>
+  <p *ngIf="status === 'loading'">Aguardando login...</p>
+  <p *ngIf="status === 'success'">Login bem-sucedido!</p>
+</div>

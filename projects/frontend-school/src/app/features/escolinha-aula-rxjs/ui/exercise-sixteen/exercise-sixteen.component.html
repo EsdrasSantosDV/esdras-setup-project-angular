@@ -1,0 +1,11 @@
+<button class="bg-green-500 border rounded-md px-4" (click)="dispararRequisicao()">
+  Disparar requisição
+</button>
+
+<ul class="list-disc list-inside">
+  <ng-container *ngIf="respostas$ | async as respostas">
+    <li *ngFor="let resposta of respostas">
+      {{ resposta }}
+    </li>
+  </ng-container>
+</ul>

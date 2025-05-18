@@ -1,0 +1,5 @@
+<ul class="list-disc list-inside" *ngIf="values$ | async as values">
+  <li *ngFor="let value of values">
+    {{ value }}
+  </li>
+</ul>

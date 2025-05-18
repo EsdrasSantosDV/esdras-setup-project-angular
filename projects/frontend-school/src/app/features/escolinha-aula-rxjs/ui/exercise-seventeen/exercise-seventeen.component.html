@@ -1,0 +1,7 @@
+<button class="bg-green-500 border rounded-md px-4"  (click)="onClick()">Fazer requisição</button>
+
+<ul class="list-disc list-inside">
+  <li *ngIf="requests$ | async as message">
+    {{ message }}
+  </li>
+</ul>
