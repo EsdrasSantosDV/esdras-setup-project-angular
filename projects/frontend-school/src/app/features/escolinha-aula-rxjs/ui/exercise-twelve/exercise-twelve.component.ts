@@ -22,7 +22,7 @@ export class ExerciseTwelveComponent {
     withLatestFrom(this.textControl.valueChanges),
     tap(([_, text]) => console.log('Texto capturado:', text)),
     map(([_, text]) => text || ''),
-    tap(finalText => console.log('Texto final:', finalText))
+    tap((finalText) => console.log('Texto final:', finalText)),
   );
 
   onButtonClick(): void {

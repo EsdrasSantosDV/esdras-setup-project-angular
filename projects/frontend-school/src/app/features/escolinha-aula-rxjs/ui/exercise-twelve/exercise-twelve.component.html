@@ -1,18 +1,15 @@
 <div class="exercise-container">
   <div class="input-container">
     <label for="text">Digite o texto:</label>
-    <input
-      id="text"
-      type="text"
-      [formControl]="textControl"
-      placeholder="Digite algo..."
-    >
+    <input id="text" type="text" [formControl]="textControl" placeholder="Digite algo..." />
   </div>
 
   <button (click)="onButtonClick()">Último texto</button>
 
   <div class="result" *ngIf="buttonClickWithText$ | async as text">
-    <p>Ultimo valor: <strong>{{ text }}</strong></p>
+    <p>
+      Ultimo valor: <strong>{{ text }}</strong>
+    </p>
   </div>
 
   <div class="note">

@@ -13,7 +13,7 @@ import { debounceTime, map, tap } from 'rxjs/operators';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ExerciseElevenComponent {
-   names = ['joao', 'jose', 'maria', 'esdras', 'tião'];
+  names = ['joao', 'jose', 'maria', 'esdras', 'tião'];
 
   usernameControl = new FormControl('');
 
@@ -22,14 +22,14 @@ export class ExerciseElevenComponent {
     message: string;
   }> = this.usernameControl.valueChanges.pipe(
     debounceTime(500),
-    map(username => {
+    map((username) => {
       if (!username) {
-        return { isValid: false, message: 'Username é obrigatório' };
+        return { isValid: false, message: 'Nome de usuário é obrigatório' };
       }
       if (this.names.includes(username.toLowerCase())) {
-        return { isValid: false, message: 'Username já está sendo utilizado' };
+        return { isValid: false, message: 'Nome de usuário já está sendo utilizado' };
       }
-      return { isValid: true, message: 'Username está disponível' };
-    })
+      return { isValid: true, message: 'Nome de usuário está disponível' };
+    }),
   );
 }

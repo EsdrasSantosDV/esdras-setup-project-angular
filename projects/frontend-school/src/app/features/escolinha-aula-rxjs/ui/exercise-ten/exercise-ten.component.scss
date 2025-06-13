@@ -1,0 +1,23 @@
+.exercise-container {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px 0;
+
+  h3 {
+    margin-top: 0;
+    color: #333;
+  }
+
+  .values {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2196f3;
+    margin: 20px 0;
+  }
+
+  .note {
+    color: #666;
+    font-style: italic;
+  }
+}

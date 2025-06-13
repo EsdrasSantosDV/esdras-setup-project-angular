@@ -20,19 +20,19 @@ export class ExerciseFourteenComponent {
   constructor(private fb: FormBuilder) {
     this.form = this.fb.group({
       name: ['', Validators.required],
-      age: ['', [Validators.required, Validators.min(0)]]
+      age: ['', [Validators.required, Validators.min(0)]],
     });
 
     this.message$ = combineLatest([
       this.form.get('name')?.valueChanges || [],
-      this.form.get('age')?.valueChanges || []
+      this.form.get('age')?.valueChanges || [],
     ]).pipe(
       map(([name, age]) => {
         if (name && age) {
           return `Olá, ${name}! Você tem ${age} anos`;
         }
         return '';
-      })
+      }),
     );
   }
 }

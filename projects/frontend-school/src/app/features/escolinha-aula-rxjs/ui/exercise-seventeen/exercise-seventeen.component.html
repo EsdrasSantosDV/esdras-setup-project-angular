@@ -1,0 +1,15 @@
+<div class="exercise-container">
+  <h3>Exercise 17 - Sequential Requests</h3>
+
+  <div class="request-container">
+    <button (click)="onButtonClick()">Make Request</button>
+
+    <div class="status" *ngIf="requestStatus$ | async as status">
+      <p>{{ status }}</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p>Each request takes 2 seconds to complete. New requests will wait for the previous one to finish.</p>
+  </div>
+</div>

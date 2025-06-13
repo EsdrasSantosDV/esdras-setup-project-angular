@@ -1,0 +1,15 @@
+<div class="exercise-container">
+  <h3>Exercise 16 - Login Button with Request Control</h3>
+
+  <div class="login-container">
+    <button (click)="onButtonClick()">Login</button>
+
+    <div class="status" *ngIf="loginStatus$ | async as status">
+      <p>{{ status }}</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <p>Click the login button multiple times. Only the first click will be processed until the request completes.</p>
+  </div>
+</div>

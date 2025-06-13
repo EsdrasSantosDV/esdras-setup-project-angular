@@ -15,10 +15,12 @@ export class ExerciseFifteenComponent {
   searchControl = new FormControl('');
 
   constructor() {
-    this.searchControl.valueChanges.pipe(
-      debounceTime(300),
-      filter((value): value is string => value !== null && value.toLowerCase().startsWith('a')),
-      tap(value => console.log(`Palavra que começa com 'A': ${value}`))
-    ).subscribe();
+    this.searchControl.valueChanges
+      .pipe(
+        debounceTime(300),
+        filter((value): value is string => value !== null && value.toLowerCase().startsWith('a')),
+        tap((value) => console.log(`Palavra que começa com 'A': ${value}`)),
+      )
+      .subscribe();
   }
 }

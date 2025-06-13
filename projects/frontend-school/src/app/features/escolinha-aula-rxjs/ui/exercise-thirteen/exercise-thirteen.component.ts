@@ -16,7 +16,7 @@ export class ExerciseThirteenComponent {
 
   clickCount$: Observable<number> = this.buttonClick$.pipe(
     startWith(0),
-    scan((count) => count + 1, 0)
+    scan((count) => count + 1, 0),
   );
 
   onButtonClick(): void {
