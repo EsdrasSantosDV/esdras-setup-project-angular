@@ -1,0 +1,56 @@
+<div class="cart-container">
+  <h2>Catálogo de Produtos</h2>
+  <table class="cart-table">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Preço</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of catalog()">
+        <td>{{ product.name }}</td>
+        <td>R$ {{ product.price }}</td>
+        <td>
+          <button (click)="addToCart(product.id)">Adicionar ao Carrinho</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2>Carrinho de Compras</h2>
+  <div *ngIf="cart() && cart().length; else emptyCart">
+    <table class="cart-table">
+      <thead>
+        <tr>
+          <th>Produto</th>
+          <th>Preço</th>
+          <th>Quantidade</th>
+          <th>Total</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of cart()">
+          <td>{{ product.name }}</td>
+          <td>R$ {{ product.price }}</td>
+          <td>
+            <input type="number" min="1" [value]="product.quantity" (change)="updateQuantity(product.id, $event)" />
+          </td>
+          <td>R$ {{ product.price * product.quantity }}</td>
+          <td>
+            <button (click)="removeFromCart(product.id)">Remover</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="cart-actions">
+      <button (click)="clearCart()">Limpar Carrinho</button>
+    </div>
+    <div class="cart-total"><strong>Total do Carrinho:</strong> R$ {{ total }}</div>
+  </div>
+  <ng-template #emptyCart>
+    <p>O carrinho está vazio.</p>
+  </ng-template>
+</div>
