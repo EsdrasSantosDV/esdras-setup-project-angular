@@ -8,6 +8,10 @@ export const routes: Routes = [
     redirectTo: 'home',
   },
   {
+    path: 'sse',
+    loadChildren: async () => (await import('./features/aula-sse/routes/routes')).routes,
+  },
+  {
     path: 'exercises-rxjs',
     loadChildren: async () => (await import('./features/escolinha-aula-rxjs/routes/routes')).routes,
   },
