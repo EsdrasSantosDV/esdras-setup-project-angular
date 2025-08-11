@@ -1,41 +1,59 @@
-/* src/app/recursos/pedidos/pedidos-lista.component.css */
 :host {
   display: block;
   color: #e7ecf3;
-  background: #0b0f14;
+  background: linear-gradient(180deg, #0b0f14 0%, #0e141d 100%);
   min-height: 100vh;
+  font-family: 'Inter', sans-serif;
 }
+
+/* Cabeçalho */
 .topo {
   padding: 24px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(6px);
 }
 .topo h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
+  font-weight: 700;
 }
 .sub {
   margin: 6px 0 0 0;
-  opacity: 0.7;
+  opacity: 0.65;
+  font-size: 0.95rem;
 }
 
+/* Conteúdo */
 .conteudo {
   padding: 24px;
 }
 .grade {
   display: grid;
-  gap: 16px;
+  gap: 20px;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
 }
 
+/* Cartão do pedido */
 .cartao {
-  background: #111826;
-  border-radius: 14px;
+  background: linear-gradient(145deg, #111826, #0c111a);
+  border-radius: 16px;
   box-shadow:
-    0 8px 22px rgba(0, 0, 0, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.35),
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   overflow: hidden;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.cartao:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.06);
 }
 
+/* Topo do cartão */
 .cartao__topo {
   display: flex;
   align-items: center;
@@ -45,11 +63,14 @@
 .pedido-id {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   opacity: 0.75;
+  font-size: 0.85rem;
 }
 .cliente {
   font-weight: 600;
+  font-size: 1rem;
 }
 
+/* Lista de itens */
 .itens {
   list-style: none;
   margin: 0;
@@ -61,31 +82,40 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
   padding: 10px 12px;
   border-radius: 10px;
+  transition: background 0.2s ease;
+}
+.item:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 .prato {
   font-weight: 500;
 }
 .qtd {
   opacity: 0.8;
+  font-size: 0.9rem;
 }
 
+/* Meta info */
 .meta {
   border-top: 1px solid rgba(255, 255, 255, 0.06);
   padding: 10px 16px;
   opacity: 0.75;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
 }
 
+/* Chips de status */
 .chip {
-  padding: 6px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.72rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  animation: fadeIn 0.3s ease;
 }
 .chip.recebido {
   background: rgba(255, 255, 255, 0.06);
@@ -104,8 +134,22 @@
   color: #90caf9;
 }
 
+/* Estado vazio */
 .vazio {
-  opacity: 0.7;
-  padding: 24px;
+  opacity: 0.6;
+  padding: 32px;
   text-align: center;
+  font-size: 1rem;
+}
+
+/* Animação para novos pedidos */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
