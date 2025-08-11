@@ -34,10 +34,7 @@ export function provideCore({ routes }: CoreOptions) {
   return [
     provideExperimentalZonelessChangeDetection(),
     provideAnimationsAsync(),
-    provideHttpClient(
-      withInterceptorsFromDi(),
-      withInterceptors([spinnerInterceptor, authInterceptor, loggingInterceptor]),
-    ),
+    provideHttpClient(withInterceptorsFromDi(), withInterceptors([spinnerInterceptor, loggingInterceptor])),
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor, multi: true },
     provideRouter(
       routes,

@@ -1,28 +1,32 @@
-<!-- app.component.html -->
-<div class="flex justify-center items-center h-screen">
-  <div class="bg-gray-900 text-white p-6 rounded-lg w-[420px]">
-    <h2 class="text-xl font-bold mb-4">Métricas do Servidor (SSE)</h2>
+<!-- src/app/recursos/orders/orders-list.component.html -->
+<header class="topo">
+  <h1>🍽️ Pedidos</h1>
+  <p class="sub">Listagem + atualização de status em tempo real</p>
+</header>
 
-    @if (metrics$ | async; as m) {
-      <div class="space-y-2">
-        <div class="flex justify-between">
-          <span>CPU load (1m):</span><span class="font-mono">{{ m.cpuLoad1m }}</span>
+<main class="conteudo" *ngIf="pedidos$ | async as pedidos">
+  <section class="grade">
+    <article class="cartao" *ngFor="let p of pedidos; trackBy: rastrearPorId">
+      <header class="cartao__topo">
+        <div>
+          <div class="pedido-id">#{{ p.id }}</div>
+          <div class="cliente">{{ p.customer }}</div>
         </div>
-        <div class="flex justify-between">
-          <span>RSS (MB):</span><span class="font-mono">{{ m.rssMB }}</span>
-        </div>
-        <div class="flex justify-between">
-          <span>Heap usado (MB):</span><span class="font-mono">{{ m.heapMB }}</span>
-        </div>
-        <div class="flex justify-between text-xs text-gray-400">
-          <span>Atualizado:</span><span>{{ m.ts }}</span>
-        </div>
-      </div>
-    }
+        <span [class]="classeStatus(p.status)">{{ p.status }}</span>
+      </header>
 
-    <div class="mt-6 flex gap-2">
-      <button class="bg-green-600 hover:bg-green-700 px-4 py-2 rounded" (click)="start()">Start</button>
-      <button class="bg-red-600 hover:bg-red-700 px-4 py-2 rounded" (click)="stop()">Stop</button>
-    </div>
-  </div>
-</div>
+      <ul class="itens">
+        <li class="item" *ngFor="let it of p.items">
+          <span class="prato">{{ it.dish }}</span>
+          <span class="qtd">x{{ it.qty }}</span>
+        </li>
+      </ul>
+
+      <footer class="meta">
+        <span>criado em {{ p.createdAt }}</span>
+      </footer>
+    </article>
+  </section>
+
+  <p class="vazio" *ngIf="pedidos.length === 0">Nenhum pedido por enquanto.</p>
+</main>
