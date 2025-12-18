@@ -1,0 +1,85 @@
+<div class="poc-event-page">
+  <div class="page-header">
+    <div class="header-content">
+      <h1 class="page-title">
+        <span class="title-icon">✨</span>
+        POC Event System
+      </h1>
+      <p class="page-subtitle">Demonstração interativa do sistema de eventos em tempo real</p>
+    </div>
+  </div>
+
+  <div class="page-content">
+    <div class="poc-container">
+      <!-- Controles de Eventos -->
+      <div class="events-controls">
+        <h2 class="section-title">Disparar Eventos</h2>
+        <div class="buttons-grid">
+          <button class="event-button event-button--created" (click)="dispatchCreated()">
+            <span class="button-icon">✨</span>
+            <span class="button-text">Criar Cliente</span>
+            <span class="button-count">{{ eventCounts().created }}</span>
+          </button>
+          <button class="event-button event-button--updated" (click)="dispatchUpdated()">
+            <span class="button-icon">🔄</span>
+            <span class="button-text">Atualizar Cliente</span>
+            <span class="button-count">{{ eventCounts().updated }}</span>
+          </button>
+          <button class="event-button event-button--deleted" (click)="dispatchDeleted()">
+            <span class="button-icon">🗑️</span>
+            <span class="button-text">Deletar Cliente</span>
+            <span class="button-count">{{ eventCounts().deleted }}</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Estatísticas -->
+      <div class="events-stats">
+        <div class="stat-card">
+          <div class="stat-icon">📊</div>
+          <div class="stat-content">
+            <div class="stat-value">{{ eventLogs().length }}</div>
+            <div class="stat-label">Total de Eventos</div>
+          </div>
+        </div>
+        <button class="clear-button" (click)="clearLogs()">
+          <span>🗑️</span>
+          <span>Limpar Log</span>
+        </button>
+      </div>
+
+      <!-- Log de Eventos -->
+      <div class="events-log">
+        <h2 class="section-title">
+          <span>📋</span>
+          Log de Eventos em Tempo Real
+        </h2>
+        <div class="log-container">
+          @if (eventLogs().length === 0) {
+            <div class="empty-state">
+              <div class="empty-icon">📭</div>
+              <p class="empty-text">Nenhum evento disparado ainda</p>
+              <p class="empty-hint">Use os botões acima para disparar eventos</p>
+            </div>
+          } @else {
+            @for (log of eventLogs(); track log.id) {
+              <div class="log-item log-item--{{ log.type | eventColor }}">
+                <div class="log-icon">{{ log.type | eventIcon }}</div>
+                <div class="log-content">
+                  <div class="log-header">
+                    <span class="log-type">{{ log.type }}</span>
+                    <span class="log-time">{{ log.timestamp | formatTime }}</span>
+                  </div>
+                  <div class="log-payload">
+                    <span class="payload-label">ID:</span>
+                    <span class="payload-value">{{ log.payload.id }}</span>
+                  </div>
+                </div>
+              </div>
+            }
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

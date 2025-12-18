@@ -51,6 +51,20 @@
             class="absolute inset-x-0 bottom-0 h-1 bg-yellow-400 scale-x-0 origin-left transition-transform duration-500 hover:scale-x-100"
           ></span>
         </a>
+
+        <a
+          #rlaPocEvent="routerLinkActive"
+          [color]="rlaPocEvent.isActive ? 'accent' : 'primary'"
+          [routerLink]="['/', 'poc-event']"
+          class="relative text-lg hover:text-yellow-400 transition-all duration-500 hover:scale-110"
+          mat-button
+          routerLinkActive
+        >
+          Poc Event
+          <span
+            class="absolute inset-x-0 bottom-0 h-1 bg-yellow-400 scale-x-0 origin-left transition-transform duration-500 hover:scale-x-100"
+          ></span>
+        </a>
       </nav>
       <button class="md:hidden text-black focus:outline-none animate-pulse">
         <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">

@@ -15,5 +15,9 @@ export const routes: Routes = [
     path: 'exercises-rxjs',
     loadChildren: async () => (await import('./features/escolinha-aula-rxjs/routes/routes')).routes,
   },
+  {
+    path: 'poc-event',
+    loadChildren: async () => (await import('./features/poc-event/routes/routes')).routes,
+  },
   { path: '**', component: PageNotFoundComponent },
 ];
